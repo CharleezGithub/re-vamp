@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class fpscode : MonoBehaviour {
 
     public float fps;
-    public Text fpsText;
+    public TextMeshProUGUI fpsText;
 
     private void Start()
     {
