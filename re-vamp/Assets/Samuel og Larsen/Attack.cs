@@ -20,7 +20,8 @@ public class AttackScript : MonoBehaviour
         if (hitEnemy != null) // Check if an enemy is within range
         {
             // Implement the attack logic here, e.g., reducing enemy health
-            // Example: hitEnemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
+            // Example:
+            hitEnemy.GetComponent<health>().TakeDamage(attackDamage);
             Debug.Log("Enemy hit!");
         }
     }
