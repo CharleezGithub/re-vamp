@@ -18,7 +18,7 @@ public class fpscode : MonoBehaviour {
 
     {
         fps = (int)(1f / Time.unscaledDeltaTime) ;
-        fpsText.text = fps + "fps";
+        fpsText.text = "fps: "+ fps ;
     }
 
 }
