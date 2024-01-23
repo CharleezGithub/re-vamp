@@ -6,6 +6,7 @@ public class AttackScript : MonoBehaviour
     public LayerMask enemyLayer;      // The layer where enemies are located
     public int attackDamage = 10;     // Damage for each attack
     public float attackInterval = 1.0f; // Time between each attack in seconds
+    
 
     void Start()
     {
@@ -20,7 +21,8 @@ public class AttackScript : MonoBehaviour
         {
             // Implement the attack logic here, e.g., reducing enemy health
             // Example:
-            //hitEnemy.GetComponent<Health>().TakeDamage(attackDamage);
+            //hitEnemy.GetComponent<health>().TakeDamage(attackDamage);
+            Health.currentHealth = Health.currentHealth - attackDamage;
             Debug.Log("Enemy hit!");
         }
     }

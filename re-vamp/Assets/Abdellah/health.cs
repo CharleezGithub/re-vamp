@@ -1,20 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class health : MonoBehaviour
+public class Health : MonoBehaviour
 {
-    public int maxHealth = 100;
-    public int currentHealth;
-    // Start is called before the first frame update
+    public float maxHealth = 100f;
+    public static float currentHealth; 
+    
     void Start()
     {
         currentHealth = maxHealth;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Update()
     {
-        
+
+        if (currentHealth <= 0)
+        {
+            //skift scene når det er lavet
+        }
     }
+
 }
