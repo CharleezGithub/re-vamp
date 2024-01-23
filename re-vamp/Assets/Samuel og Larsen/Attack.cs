@@ -20,7 +20,7 @@ public class AttackScript : MonoBehaviour
         {
             // Implement the attack logic here, e.g., reducing enemy health
             // Example:
-            hitEnemy.GetComponent<Health>().TakeDamage(attackDamage);
+            //hitEnemy.GetComponent<Health>().TakeDamage(attackDamage);
             Debug.Log("Enemy hit!");
         }
     }
