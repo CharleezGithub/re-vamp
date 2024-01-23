@@ -7,7 +7,7 @@ public class EnemyAttack : MonoBehaviour
     public GameObject player;
     public LayerMask Layer;
     public float range = 5f;
-    public int damage = 5;
+    public int damage = 1;
     public float cooldown = 1f;
 
     Collider2D AttackRange;

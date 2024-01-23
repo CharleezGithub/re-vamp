@@ -10,29 +10,32 @@ public class EnemyHealth : MonoBehaviour
     public int currentHealth;
     public TextMeshProUGUI healthText;
     public Slider healthBar;
+    public Vector3 healthBarOffset;
     void Start()
     {
         currentHealth = maxHealth;
     }
     public void Update()
     {
-        Debug.Log(currentHealth);
-
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
         }
-        if (currentHealth > 0)
+        else if (currentHealth > 0)
         {
-            if (healthText != null)
-            healthText.text = "Health: " + currentHealth;
             healthBar.value = currentHealth;
         }
-        else if (healthText != null && currentHealth <= 0)
-            healthText.text = "Health: " + 0;
+        HealthBarPosition();
     }
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+    }
+
+    void HealthBarPosition()
+    {
+        Camera camera = Camera.main;
+        healthBar.transform.rotation = camera.transform.rotation;
+        healthBar.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z) + healthBarOffset;
     }
 }

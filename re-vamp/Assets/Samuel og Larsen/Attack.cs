@@ -11,16 +11,14 @@ public class AttackScript : MonoBehaviour
     void Start()
     {
         // Start the auto-attack repeating every 'attackInterval' seconds
-        InvokeRepeating("AutoAttack", 0f, attackInterval);
+        InvokeRepeating(nameof(AutoAttack), 0f, attackInterval);
     }
-
     void AutoAttack()
     {
-        Collider2D hitEnemy = Physics2D.OverlapCircle(transform.position, attackRange, EnemyLayer);
-        if (hitEnemy != null) // Check if an enemy is within range
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, attackRange, EnemyLayer);
+        foreach (Collider2D hitEnemy in hitEnemies)
         {
-            enemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
-            Debug.Log("Enemy hit!");
+            hitEnemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
         }
     }
 
