@@ -11,7 +11,7 @@ public class EnemyFollow : MonoBehaviour
     {
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         Vector2 playerPos = player.transform.position;
 
