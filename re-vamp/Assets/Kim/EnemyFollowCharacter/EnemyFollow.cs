@@ -6,10 +6,9 @@ public class EnemyFollow : MonoBehaviour
 {
     float maxSpeed = 2.0f; // Maximum speed of the object.
     float acceleration = 4.0f; // Acceleration factor for smoother movement.
-    GameObject player;
+    public GameObject player;
     private void Start()
     {
-        player = GameObject.FindWithTag("Player");
     }
 
     private void Update()

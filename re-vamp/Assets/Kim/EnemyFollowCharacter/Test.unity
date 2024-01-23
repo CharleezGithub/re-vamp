@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0278b9e4d8ea5ab41a782d03e13daf27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 100
+  amount: 5
   nyGameObject: {fileID: 931129801}
 --- !u!114 &102016372
 MonoBehaviour:
@@ -198,8 +198,9 @@ GameObject:
   - component: {fileID: 285182213}
   - component: {fileID: 285182212}
   - component: {fileID: 285182216}
+  - component: {fileID: 285182218}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -347,6 +348,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &285182218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285182211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0194c45efb6d5714b89dd46c1ebebb38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackRange: 1
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  attackDamage: 10
+  attackInterval: 1
 --- !u!1 &810924049
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,6 +652,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e0f68329baf70e4895b5dca338487ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 285182211}
 --- !u!212 &931129804
 SpriteRenderer:
   m_ObjectHideFlags: 0
