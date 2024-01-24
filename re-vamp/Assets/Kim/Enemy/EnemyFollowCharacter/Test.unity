@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0278b9e4d8ea5ab41a782d03e13daf27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 20
+  amount: 0
   nyGameObject: {fileID: 931129801}
 --- !u!114 &102016372
 MonoBehaviour:
@@ -404,6 +404,7 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthText: {fileID: 1027642425}
+  armour: 50
 --- !u!114 &285182222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1006,17 +1007,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 931129801}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0033a4a5eabe4cc4fb7a38e74336e469, type: 3}
+  m_Script: {fileID: 11500000, guid: 870c6e29fabc3af44b2780353bbbcbe8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 285182211}
   Layer:
+    serializedVersion: 2
     m_Bits: 1
   range: 0.2
-  damage: 5
+  damage: 10
   cooldown: 1
-  AttackRange: {fileID: 0}
-  canAttack: 0
 --- !u!1 &950900309
 GameObject:
   m_ObjectHideFlags: 0
