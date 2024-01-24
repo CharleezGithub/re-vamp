@@ -1011,11 +1011,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 285182211}
   Layer:
-    serializedVersion: 2
     m_Bits: 1
   range: 0.2
   damage: 5
   cooldown: 1
+  AttackRange: {fileID: 0}
+  canAttack: 0
 --- !u!1 &950900309
 GameObject:
   m_ObjectHideFlags: 0
