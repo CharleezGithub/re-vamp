@@ -340,8 +340,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2070384401}
-        m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
+      - m_Target: {fileID: 2070384402}
+        m_TargetAssemblyTypeName: Settingssceneswitch, Assembly-CSharp
         m_MethodName: OnButtonPress
         m_Mode: 1
         m_Arguments:
