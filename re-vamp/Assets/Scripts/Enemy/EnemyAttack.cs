@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour
 {
     public GameObject player;
-    public LayerMask Layer;
+    public LayerMask attackedLayer;
     public float range = 5f;
     public int damage = 1;
     public float cooldown = 1f;
@@ -22,7 +22,7 @@ public class EnemyAttack : MonoBehaviour
     }
     private void Attacklogic()
     {
-        AttackRange = Physics2D.OverlapCircle(transform.position, range, Layer);
+        AttackRange = Physics2D.OverlapCircle(transform.position, range, attackedLayer);
 
         if (AttackRange != null && canAttack)
         {
