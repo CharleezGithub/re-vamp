@@ -13,7 +13,6 @@ public class ProjectileEnemyAttack : MonoBehaviour
     void Start()
     {
         InvokeRepeating("FireProjectile", 0, fireInterval);
-        rb = GetComponent<Rigidbody2D>();
     }
     void FireProjectile()
     {
