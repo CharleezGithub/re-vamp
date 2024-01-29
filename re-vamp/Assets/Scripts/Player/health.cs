@@ -6,6 +6,7 @@ public class Health : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
     public TextMeshProUGUI healthText;
+    public int armour;
 
     void Start()
     {
@@ -26,8 +27,12 @@ public class Health : MonoBehaviour
             healthText.text = "Health: " + 0;
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
-        currentHealth -= damage;    
+        float damageReduction = (100 + armour) / 100;
+        damage = damage / damageReduction;
+        currentHealth -= (int)damage;    
     }
+    
+  
 }
