@@ -586,7 +586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fe5c2cb725de6c488a9f96133f542f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 200
   dashMultiplier: 3
   dashDuration: 0.2
   dashCooldown: 2
@@ -606,7 +606,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &361352410
 Transform:
   m_ObjectHideFlags: 0
@@ -1124,7 +1124,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 931129801}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e0f68329baf70e4895b5dca338487ce, type: 3}
   m_Name: 
@@ -1356,9 +1356,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 2434131853355342802, guid: 01598a17c2d93ad4bb9b0d46aafaad12, type: 3}
   target: {fileID: 285182211}
-  fireInterval: 1
-  projectileSpeed: 10
-  projectileLifetime: 3
+  fireInterval: 0.5
+  projectileSpeed: 7.5
+  projectileLifetime: 2
 --- !u!1 &950900309
 GameObject:
   m_ObjectHideFlags: 0
@@ -2309,7 +2309,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1784888997
 Transform:
   m_ObjectHideFlags: 0

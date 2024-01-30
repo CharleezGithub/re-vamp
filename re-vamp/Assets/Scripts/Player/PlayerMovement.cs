@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Movement
-        rb.MovePosition(rb.position + movement * currentSpeed * Time.fixedDeltaTime);
+        rb.velocity = (movement * currentSpeed * Time.fixedDeltaTime);
     }
 
     void Dash()
