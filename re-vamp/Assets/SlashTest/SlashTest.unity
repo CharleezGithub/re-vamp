@@ -178,7 +178,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 102016369}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2363edbbe609d294f8e2da22249be08d, type: 3}
   m_Name: 
@@ -364,6 +364,7 @@ GameObject:
   m_Component:
   - component: {fileID: 285182215}
   - component: {fileID: 285182214}
+  - component: {fileID: 285182225}
   - component: {fileID: 285182212}
   - component: {fileID: 285182216}
   - component: {fileID: 285182218}
@@ -567,7 +568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fe5c2cb725de6c488a9f96133f542f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 50
   dashMultiplier: 3
   dashDuration: 0.2
   dashCooldown: 2
@@ -590,6 +591,21 @@ MonoBehaviour:
   attackInterval: 1
   attackRange: 3
   attackAngle: 56.4
+--- !u!114 &285182225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285182211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e07ff57551c20784b97f489b1b157e62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabToSpawn: {fileID: 5374765452692168027, guid: edd24ed6e7d82a145a9e40385a0c0169, type: 3}
+  gameCamera: {fileID: 918827020}
+  waitTime: 1
 --- !u!1 &361352409
 GameObject:
   m_ObjectHideFlags: 0
