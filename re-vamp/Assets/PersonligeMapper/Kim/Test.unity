@@ -415,8 +415,20 @@ PrefabInstance:
       value: OrbitPoint
       objectReference: {fileID: 0}
     - target: {fileID: 6515391704859421186, guid: 11ea49700baf377419d56a08db4be9c4, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515391704859421186, guid: 11ea49700baf377419d56a08db4be9c4, type: 3}
       propertyPath: attackDamage
-      value: 50
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515391704859421186, guid: 11ea49700baf377419d56a08db4be9c4, type: 3}
+      propertyPath: attackInterval
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7643438164398235693, guid: 11ea49700baf377419d56a08db4be9c4, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8957310669179696216, guid: 11ea49700baf377419d56a08db4be9c4, type: 3}
       propertyPath: player
@@ -586,7 +598,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 285182211}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0194c45efb6d5714b89dd46c1ebebb38, type: 3}
   m_Name: 
@@ -595,7 +607,7 @@ MonoBehaviour:
   EnemyLayer:
     serializedVersion: 2
     m_Bits: 8
-  attackDamage: 0
+  attackDamage: 10
   attackInterval: 1
   enemy: {fileID: 931129801}
 --- !u!114 &285182220
