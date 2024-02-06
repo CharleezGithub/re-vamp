@@ -777,7 +777,7 @@ GameObject:
   - component: {fileID: 1194816313}
   - component: {fileID: 1194816314}
   m_Layer: 5
-  m_Name: NewGame
+  m_Name: CharacterSelect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -814,7 +814,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bebf79bb219eb040afa188199a37b69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Scene2: CharacterSelect
 --- !u!1 &1306027398
 GameObject:
   m_ObjectHideFlags: 0
@@ -1130,7 +1129,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bebf79bb219eb040afa188199a37b69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Scene2: Settings
 --- !u!1 &1709640877
 GameObject:
   m_ObjectHideFlags: 0
