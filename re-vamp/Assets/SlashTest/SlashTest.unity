@@ -605,7 +605,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabToSpawn: {fileID: 5374765452692168027, guid: edd24ed6e7d82a145a9e40385a0c0169, type: 3}
   gameCamera: {fileID: 918827020}
-  waitTime: 1
+  minScale: 0.5
+  maxScale: 2
+  minimumDistance: 3
+  timeBetweenExplotions: 0.1
 --- !u!1 &361352409
 GameObject:
   m_ObjectHideFlags: 0
