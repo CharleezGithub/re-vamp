@@ -35,7 +35,6 @@ public class GameWave : MonoBehaviour
             var EnemyToSpawn = Enemies[EnemyIndex];
 
             SpawnCircle(Difficulty, EnemyToSpawn);
-            Instantiate(EnemyToSpawn);
             Difficulty -= 1;
         }
     }
@@ -49,7 +48,7 @@ public class GameWave : MonoBehaviour
             float x = Mathf.Cos(angle * Mathf.Deg2Rad) * radius;
             float y = Mathf.Sin(angle * Mathf.Deg2Rad) * radius;
             // Determine the position to spawn the object
-            Vector3 spawnPosition = transform.position + new Vector3(x, 0, y); // Adjust y to your needs, depending on the orientation of your game
+            Vector3 spawnPosition = transform.position + new Vector3(x, y, 0); // Adjust y to your needs, depending on the orientation of your game
             // Spawn the object
             Instantiate(objectToSpawn, spawnPosition, Quaternion.identity);
         }
