@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0278b9e4d8ea5ab41a782d03e13daf27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 0
+  amount: 10
   nyGameObject: {fileID: 931129801}
 --- !u!114 &102016372
 MonoBehaviour:
@@ -404,7 +404,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 593402419069158046, guid: 11ea49700baf377419d56a08db4be9c4, type: 3}
       propertyPath: speed
-      value: 70
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 593402419069158046, guid: 11ea49700baf377419d56a08db4be9c4, type: 3}
       propertyPath: player
