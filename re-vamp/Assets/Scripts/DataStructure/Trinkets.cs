@@ -1,30 +1,31 @@
-using Newtonsoft.Json.Linq;
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
-public class allTrinkets
+[Serializable]
+public class TrinketCollection
 {
-    public Trinket[] trinkets { get; set; }
+    public Trinket[] trinkets;
 }
 
+[Serializable]
 public class Trinket
 {
-    public string name { get; set; }
-    public attribute attributes { get; set; }
+    public string name;
+    public Attributes attributes;
 }
 
-public class attribute
+[Serializable]
+public class Attributes
 {
-    public int level { get; set; }
-    public int max_health_increase { get; set; }
-    public int damage_increase { get; set; }
-    public int armor_increase { get; set; }
-    public int item_shop_slot_increase { get; set; }
-    public float projectile_speed_increase { get; set; }
-    public float movement_speed_increase { get; set; }
-    public float view_distance_increase { get; set; }
-    public float level_multiplier { get; set; }
-    public string description { get; set; }
-    public string item { get; set; }
+    public int level;
+    public int maxHealthIncrease;
+    public int damageIncrease;
+    public int armorIncrease;
+    public int itemShopSlotIncrease;
+    public float projectileSpeedIncrease;
+    public float movementSpeedIncrease;
+    public float viewDistanceIncrease;
+    public float levelMultiplier;
+    public string description;
+    public string item;
 }

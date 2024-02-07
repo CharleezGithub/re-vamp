@@ -1,0 +1,64 @@
+﻿{
+  "weapons" : [
+    {
+      "name": "Greatsword",
+      "attributes": {
+        "type": "Greatsword",
+        "effect": "AOE slashing",
+        "special": "None",
+        "description": "It’s almost too big",
+        "reference": "Anime oversized sword"
+      }
+    },
+    {
+      "name": "Silverware",
+      "attributes": {
+        "type": "Silverware",
+        "effect": "None",
+        "special": "Damage increase vs vampiric enemies",
+        "description": "SO SHINY",
+        "purchase_link": "Amazon.com E-far 60-Piece Silverware Set"
+      }
+    },
+    {
+      "name": "Arcane Spelltome",
+      "attributes": {
+        "type": "Spelltome",
+        "effect": "Arcane magic projectiles",
+        "special": "Homing projectiles",
+        "description": "So much untapped power!",
+        "purchase_link": "Buy Soaring Spelltome Mount – A Tour of Towers"
+      }
+    },
+    {
+      "name": "The Old Testament",
+      "attributes": {
+        "type": "Religious Text",
+        "effect": "Protective swarm (David's Star)",
+        "special": "Slicing sound on impact",
+        "description": "הֲגָנָה",
+        "reference": "Tanakh, Hebrew Bible"
+      }
+    },
+    {
+      "name": "The New Testament",
+      "attributes": {
+        "type": "Religious Text",
+        "effect": "Spawns holy light to burn enemies",
+        "special": "Ethereal singing or sound of beam slamming",
+        "description": "Divine intervention",
+        "reference": "Christian Bible"
+      }
+    },
+    {
+      "name": "The Holy Bible",
+      "attributes": {
+        "type": "Religious Text Supreme",
+        "effect": "Combination of David's Star and ring of holy light",
+        "special": "Burns and slices through enemies",
+        "description": "Holy heck",
+        "reference": "Combining The Old and New Testament effects"
+      }
+    }
+  ]
+}
