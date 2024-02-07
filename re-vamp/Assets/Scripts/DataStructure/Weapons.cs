@@ -1,18 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
-public class Weapons : MonoBehaviour
+[Serializable]
+public class WeaponCollection
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Weapon[] weapons;
+}
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+[Serializable]
+public class Weapon
+{
+    public string name;
+    public WeaponAttributes attributes;
+}
+
+[Serializable]
+public class WeaponAttributes
+{
+    public string description;
+    public string item;
+    public int damage;
+    public int level;
+    public float levelMultiplier;
 }

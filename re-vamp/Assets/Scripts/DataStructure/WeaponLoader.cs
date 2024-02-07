@@ -1,23 +1,23 @@
 using UnityEngine;
 
-public class TrinketLoader : MonoBehaviour
+public class WeaponLoader : MonoBehaviour
 {
-    public TextAsset jsonFile; // Assign this in the Inspector with your JSON file
+    public TextAsset jsonFile;
 
     void Start()
     {
-        LoadTrinkets();
+        LoadWeapons();
     }
 
-    void LoadTrinkets()
+    void LoadWeapons()
     {
         if (jsonFile != null)
         {
-            TrinketCollection trinketCollection = JsonUtility.FromJson<TrinketCollection>(jsonFile.text);
+            WeaponCollection weaponCollection = JsonUtility.FromJson<WeaponCollection>(jsonFile.text);
 
-            foreach (Trinket trinket in trinketCollection.trinkets)
+            foreach (Weapon weapon in weaponCollection.weapons)
             {
-                Debug.Log($"Loaded Trinket: {trinket.name}, Level: {trinket.attributes.level}");
+                Debug.Log($"Loaded Trinket: {weapon.name}, Level: {weapon.attributes.level}");
 
                 // Here you can instantiate GameObjects or assign values to them based on the trinket data
                 // For example, creating a new GameObject for each trinket or finding existing ones and setting their properties

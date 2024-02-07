@@ -3,7 +3,7 @@
     {
       "name": "Max health increase trinket",
       "attributes": {
-        "level" : 1,
+        "level": 1,
         "max_health_increase": 1,
         "damage_increase": 0,
         "armor_increase": 0,
@@ -11,7 +11,7 @@
         "projectile_speed_increase": 0.0,
         "movement_speed_increase": 0.0,
         "view_distance_increase": 0.0,
-        "level_multiplier": 0.5,
+        "level_multiplier": 1.5,
         "description": "It smells distinctly of not jelly.",
         "item": "Heart jelly"
       }
@@ -27,7 +27,7 @@
         "projectile_speed_increase": 0.0,
         "movement_speed_increase": 0.0,
         "view_distance_increase": 0.0,
-        "level_multiplier": 0.5,
+        "level_multiplier": 1.5,
         "description": "This is gonna hurt.",
         "item": "Knuckle dusters"
       }
@@ -43,7 +43,7 @@
         "projectile_speed_increase": 0.0,
         "movement_speed_increase": 0.0,
         "view_distance_increase": 0.0,
-        "level_multiplier": 0.5,
+        "level_multiplier": 1.5,
         "description": "It makes people feel good, trust.",
         "item": "Kanyle med ukendt substans"
       }
@@ -59,7 +59,7 @@
         "projectile_speed_increase": 1.0,
         "movement_speed_increase": 0.0,
         "view_distance_increase": 0.0,
-        "level_multiplier": 0.5,
+        "level_multiplier": 1.5,
         "description": "Not everyone can pull them off.",
         "item": "Stark red cowboy boots"
       }
@@ -75,7 +75,7 @@
         "projectile_speed_increase": 0.0,
         "movement_speed_increase": 1.0,
         "view_distance_increase": 0.0,
-        "level_multiplier": 0.5,
+        "level_multiplier": 1.5,
         "description": [ "It�s not very comfortable", "Don't look at it for too long" ],
         "item": "En form for rustning"
       }
@@ -91,7 +91,7 @@
         "projectile_speed_increase": 0.0,
         "movement_speed_increase": 0.0,
         "view_distance_increase": 0.0,
-        "level_multiplier": 0.5,
+        "level_multiplier": 1.5,
         "description": "It�s stuck",
         "item": "Slot machine"
       }
@@ -107,7 +107,7 @@
         "projectile_speed_increase": 0.0,
         "movement_speed_increase": 0.0,
         "view_distance_increase": 1.0,
-        "level_multiplier": 0.5,
+        "level_multiplier": 1.5,
         "description": "Bravo six going dark",
         "item": "Monocle"
       }

@@ -11,11 +11,11 @@ public class TrinketCollection
 public class Trinket
 {
     public string name;
-    public Attributes attributes;
+    public TrinketAttributes attributes;
 }
 
 [Serializable]
-public class Attributes
+public class TrinketAttributes
 {
     public int level;
     public int maxHealthIncrease;
