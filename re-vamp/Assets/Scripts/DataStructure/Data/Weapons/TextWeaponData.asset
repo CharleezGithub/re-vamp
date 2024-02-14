@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14311d488efe33d47ac0fbd511f80239, type: 3}
-  m_Name: ColosalSwordWeaponData
+  m_Name: TextWeaponData
   m_EditorClassIdentifier: 
-  weaponName: colosal sword
-  description: grseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeesdfswefsefsefsefsefsefsefsefsefsefsefsf
-  damage: 20
-  level: 1
-  levelMultiplier: 0.25
-  weaponPrefab: {fileID: 8427938882397602699, guid: 352ca14c865a0e24c81dafb72eb127ba, type: 3}
+  weaponName: 
+  description: 
+  damage: 0
+  level: 0
+  levelMultiplier: 0
+  weaponPrefab: {fileID: 0}

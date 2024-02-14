@@ -10,8 +10,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 53042319356948366, guid: 9a2906d6f44e6cc4f90e57c23e9f1d84, type: 3}
       propertyPath: m_Name
-      value: Weapon
+      value: GreatswordWeapon
       objectReference: {fileID: 0}
+    - target: {fileID: 5695987522607441928, guid: 9a2906d6f44e6cc4f90e57c23e9f1d84, type: 3}
+      propertyPath: weaponData
+      value: 
+      objectReference: {fileID: 11400000, guid: 2cd607dbac3a2854c95fab0bd5b7bc2d, type: 2}
     - target: {fileID: 6076893770685788500, guid: 9a2906d6f44e6cc4f90e57c23e9f1d84, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
