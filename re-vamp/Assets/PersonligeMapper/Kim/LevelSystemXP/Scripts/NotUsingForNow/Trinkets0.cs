@@ -4,11 +4,11 @@ using UnityEngine;
 [Serializable]
 public class TrinketCollection
 {
-    public Trinket[] trinkets;
+    public Trinkets[] trinkets;
 }
 
 [Serializable]
-public class Trinket
+public class Trinkets
 {
     public string name;
     public TrinketAttributes attributes;

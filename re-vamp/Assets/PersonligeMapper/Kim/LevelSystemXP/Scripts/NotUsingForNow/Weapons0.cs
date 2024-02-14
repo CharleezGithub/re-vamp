@@ -4,11 +4,11 @@ using UnityEngine;
 [Serializable]
 public class WeaponCollection
 {
-    public Weapon[] weapons;
+    public Weapons[] weapons;
 }
 
 [Serializable]
-public class Weapon
+public class Weapons
 {
     public string name;
     public WeaponAttributes attributes;
