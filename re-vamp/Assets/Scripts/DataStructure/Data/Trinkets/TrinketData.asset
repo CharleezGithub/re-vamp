@@ -24,4 +24,4 @@ MonoBehaviour:
   movementSpeedIncrease: 0
   viewDistanceIncrease: 0
   levelMultiplier: 0
-  TrinketPrefab: {fileID: 0}
+  trinketPrefab: {fileID: 8427938882397602699, guid: 352ca14c865a0e24c81dafb72eb127ba, type: 3}

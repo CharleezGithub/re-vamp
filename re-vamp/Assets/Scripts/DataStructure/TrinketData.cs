@@ -17,5 +17,5 @@ public class TrinketData : ScriptableObject
     public float movementSpeedIncrease;
     public float viewDistanceIncrease;
     public float levelMultiplier;
-    public GameObject TrinketPrefab;
+    public GameObject trinketPrefab;
 }

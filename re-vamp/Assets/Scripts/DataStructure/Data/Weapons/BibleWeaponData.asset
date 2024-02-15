@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14311d488efe33d47ac0fbd511f80239, type: 3}
   m_Name: BibleWeaponData
   m_EditorClassIdentifier: 
-  weaponName: 
-  description: 
-  damage: 0
-  level: 0
+  weaponName: a1
+  description: sdhh
+  damage: 5
+  level: 1
   levelMultiplier: 0
-  weaponPrefab: {fileID: 0}
+  weaponPrefab: {fileID: 4224563350556370684, guid: c8b296167d38a534fa3c57035203f8ae, type: 3}

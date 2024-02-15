@@ -9,7 +9,7 @@ public class XPController : LevelController
         if (other.CompareTag("XPOrb"))
         {
             Destroy(other.gameObject);
-            AddXP(1);
+            GiveXP(1);
         }
     }
 }

@@ -14,9 +14,8 @@ GameObject:
   - component: {fileID: 5739602823149331073}
   - component: {fileID: 5670154961778921473}
   - component: {fileID: 2937292952063099603}
-  - component: {fileID: 7888158576863402904}
-  - component: {fileID: 285610896895252335}
   - component: {fileID: 6541668134400005208}
+  - component: {fileID: 4148452497689194825}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -188,38 +187,6 @@ MonoBehaviour:
   currentHealth: 0
   healthText: {fileID: 0}
   armour: 50
---- !u!114 &7888158576863402904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3977218777653717955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0194c45efb6d5714b89dd46c1ebebb38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackRange: 1
-  EnemyLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  attackDamage: 10
-  attackInterval: 1
-  enemy: {fileID: 0}
---- !u!114 &285610896895252335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3977218777653717955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e097990f2cc6d7a4eb94679ec90d383e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
 --- !u!114 &6541668134400005208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,3 +203,19 @@ MonoBehaviour:
   dashMultiplier: 3
   dashDuration: 0.2
   dashCooldown: 2
+--- !u!114 &4148452497689194825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3977218777653717955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8866066ca5be0274687fd90ec7021d4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xpText: {fileID: 0}
+  levelText: {fileID: 0}
+  xp: 0
+  maxXP: 0

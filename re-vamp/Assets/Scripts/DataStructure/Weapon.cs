@@ -1,44 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
     public WeaponData weaponData; // Reference to the ScriptableObject
-
-    // This method is called automatically when the script is loaded
+    public List<WeaponData> allWeaponData = new List<WeaponData>();
     void Awake()
     {
-        // Do whatever you need to do with the loaded WeaponData
-        Debug.Log("Weapon Name: " + weaponData.weaponName);
-        Debug.Log("Description: " + weaponData.description);
-        Debug.Log("Damage: " + weaponData.damage);
-        Debug.Log("Level: " + weaponData.level);
-        Debug.Log("Level Multiplier: " + weaponData.levelMultiplier);
-        Debug.Log("Weapon Prefab: " + weaponData.weaponPrefab);
-        Debug.Log(" ");
-        UpdateVariablesInData();
+        LoadAllWeaponData();        
     }
-
-    void UpdateVariablesInData()
+    void LoadAllWeaponData()
     {
-        // Modify the 'damage' variable of the 'weaponData' ScriptableObject
-        if (weaponData != null)
+        allWeaponData.Clear(); // Clear the list to avoid duplicates if Start is called multiple times
+
+        // Find all GUIDs of ScriptableObject files of type WeaponData
+        string[] guids = AssetDatabase.FindAssets("t:WeaponData");
+
+        foreach (string guid in guids)
         {
-            Debug.Log("Original Damage: " + weaponData.damage);
+            // Get the file path using the GUID
+            string assetPath = AssetDatabase.GUIDToAssetPath(guid);
 
-            // Change the value of the 'damage' variable
-            weaponData.damage = 30; // Change this to the desired new value
+            // Load the ScriptableObject instance at the specified path
+            WeaponData weaponData = AssetDatabase.LoadAssetAtPath<WeaponData>(assetPath);
 
-            Debug.Log("New Damage: " + weaponData.damage);
-
-            // Save changes back to the ScriptableObject asset file
-            UnityEditor.EditorUtility.SetDirty(weaponData);
-            UnityEditor.AssetDatabase.SaveAssets();
-        }
-        else
-        {
-            Debug.LogError("WeaponData is not assigned!");
+            // Add the loaded WeaponData instance to the list
+            allWeaponData.Add(weaponData);
         }
     }
 }

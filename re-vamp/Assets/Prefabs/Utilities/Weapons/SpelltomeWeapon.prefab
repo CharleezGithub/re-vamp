@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 53042319356948366, guid: 9a2906d6f44e6cc4f90e57c23e9f1d84, type: 3}
       propertyPath: m_Name
-      value: Weapon
+      value: SpelltomeWeapon
       objectReference: {fileID: 0}
     - target: {fileID: 6076893770685788500, guid: 9a2906d6f44e6cc4f90e57c23e9f1d84, type: 3}
       propertyPath: m_LocalPosition.x
@@ -51,6 +51,22 @@ PrefabInstance:
     - target: {fileID: 6076893770685788500, guid: 9a2906d6f44e6cc4f90e57c23e9f1d84, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9152968605973622470, guid: 9a2906d6f44e6cc4f90e57c23e9f1d84, type: 3}
+      propertyPath: m_Size.x
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 9152968605973622470, guid: 9a2906d6f44e6cc4f90e57c23e9f1d84, type: 3}
+      propertyPath: m_Size.y
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 9152968605973622470, guid: 9a2906d6f44e6cc4f90e57c23e9f1d84, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 209607d919ab2fa4cb06ff0670853f5a, type: 3}
+    - target: {fileID: 9152968605973622470, guid: 9a2906d6f44e6cc4f90e57c23e9f1d84, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
