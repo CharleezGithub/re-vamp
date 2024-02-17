@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Movement
-        rb.velocity = (movement * currentSpeed * Time.fixedDeltaTime);
+        rb.velocity = (currentSpeed * Time.fixedDeltaTime * movement);
     }
 
     void Dash()
