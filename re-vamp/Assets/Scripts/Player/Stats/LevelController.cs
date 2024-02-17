@@ -18,7 +18,7 @@ public class LevelController : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.X)) // TODO : remove this
-            GiveXP(50f);
+            GiveXP(maxXP);
     }
     public void GiveXP(float xpGain)
     {
