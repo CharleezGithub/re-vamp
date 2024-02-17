@@ -9,8 +9,6 @@ public class XPBar : LevelController
     public TextMeshProUGUI levelText;
 
     public Slider xpBar;
-
-    public LevelController xpComponent;
     private void Update()
     {
         float roundedXP = (float)Math.Round(xp, 1);
@@ -18,8 +16,7 @@ public class XPBar : LevelController
 
         levelText.text = "" + level;
 
-        xpBar.maxValue = xpComponent.maxXP;
-        xpBar.value = xpComponent.xp;
-
+        xpBar.maxValue = maxXP;
+        xpBar.value = xp;
     }
 }
