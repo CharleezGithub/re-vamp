@@ -19,7 +19,6 @@ public class Inventory : MonoBehaviour
     {
         InitializeFields();
     }
-
     private void InitializeFields()
     {
         Vector2 currentWeaponPosition = Vector2.zero; // Start position for weapon fields
@@ -44,10 +43,59 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void AddItem(Sprite itemSprite, bool isWeapon, int index)
+    public void AddItem(Sprite itemSprite, bool isWeapon)
     {
-        // This function will now need to find the correct field based on index and update its sprite
-        // This part of the script will require adjustments to access and modify existing fields
+        Transform parentObject = isWeapon ? weaponRef.transform : trinketRef.transform;
+        bool itemAdded = false;
+        bool duplicateFound = false;
+
+        // Iterate over each field to find the first one without an item sprite or to detect duplicates
+        foreach (Transform fieldTransform in parentObject)
+        {
+            // Assuming each field has exactly one child used for the item image
+            if (fieldTransform.childCount > 0)
+            {
+                Image itemImage = fieldTransform.GetChild(0).GetComponent<Image>();
+                if (itemImage != null)
+                {
+                    if (itemImage.sprite == null || itemImage.sprite == fieldSprite)
+                    {
+                        // This field is empty, so we can add the item here
+                        itemImage.sprite = itemSprite;
+                        itemImage.rectTransform.sizeDelta = spriteSize;
+                        itemAdded = true;
+                        break; // Stop searching once we've added the item
+                    }
+                    else if (itemImage.sprite == itemSprite)
+                    {
+                        // Found a duplicate
+                        duplicateFound = true;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                // No child image found, add one
+                GameObject newItemGO = new GameObject("Item Image", typeof(Image));
+                newItemGO.transform.SetParent(fieldTransform, false);
+                Image newItemImage = newItemGO.GetComponent<Image>();
+                newItemImage.sprite = itemSprite;
+                newItemImage.rectTransform.sizeDelta = spriteSize;
+                itemAdded = true;
+                break; // Item added, no need to continue
+            }
+        }
+
+        if (duplicateFound)
+        {
+            Debug.Log("Duplicate item detected.");
+        }
+        else if (!itemAdded)
+        {
+            Debug.Log("All fields are occupied.");
+            // Handle the case when all fields are occupied
+        }
     }
 
     void CreateInventoryItem(Sprite itemSprite, bool isWeapon, Transform parentObject, ref Vector2 currentPosition, Vector2 offset)

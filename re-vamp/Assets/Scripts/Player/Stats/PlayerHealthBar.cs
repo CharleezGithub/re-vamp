@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerHealthBar : Health
+public class PlayerHealthBar : MonoBehaviour
 {
     public Slider healthBar;
-    void Update()
+    public Health health;
+    private void Update()
     {
-        healthBar.value = GetComponent<Health>().currentHealth;
+        healthBar.value = health.currentHealth;
     }
 }

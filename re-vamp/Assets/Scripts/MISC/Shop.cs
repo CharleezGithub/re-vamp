@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System;
 
 public class Shop : MonoBehaviour
 {
@@ -13,9 +14,19 @@ public class Shop : MonoBehaviour
 
     public bool fourthSlotActivated;
     public GameObject shop;
+
+    public Inventory inventory;
+
+    int[] itemIndex;
+    int selectedIndex;
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+            ShowShop(true);
+    }
     void Awake()
     {
-        shop.SetActive(false);
+        shop.SetActive(false);        
     }
     public void ShowShop(bool active)
     {
@@ -25,34 +36,55 @@ public class Shop : MonoBehaviour
     }
     void RefreshShop()
     {
-        int slotCount = fourthSlotActivated ? 2 : 1;
+        int slotCount = fourthSlotActivated ? 3 : 2;
         LoadSpritesAndText(slotCount, weapon.allWeaponData.Count, trinket.allTrinketData.Count);
     }
     void LoadSpritesAndText(int slotCount, int weaponCount, int trinketCount)
     {
-        slotContent[0].sprite = weapon.allWeaponData[GetRandomIntInRange(weaponCount)].weaponPrefab.GetComponent<SpriteRenderer>().sprite;
-        textSlots[0].text = weapon.allWeaponData[GetRandomIntInRange(weaponCount)].name;
-        for (int i = 0; i <= slotCount; i++)
+        itemIndex = new int[slotCount + 1];
+        Debug.Log(weapon.allWeaponData.Count);
+        itemIndex[0] = GetRandomIntInRange(weaponCount);
+        slotContent[0].sprite = weapon.allWeaponData[itemIndex[0]].weaponPrefab.GetComponent<SpriteRenderer>().sprite;
+        textSlots[0].text = weapon.allWeaponData[itemIndex[0]].weaponName;
+
+        for (int i = 1; i <= slotCount; i++)
         {
             int x = GetRandomIntInRange(trinketCount);
             if (x > weaponCount)
             {
-                slotContent[i + 1].sprite = weapon.allWeaponData[GetRandomIntInRange(weaponCount)].weaponPrefab.GetComponent<SpriteRenderer>().sprite;
-                textSlots[i + 1].text = weapon.allWeaponData[GetRandomIntInRange(weaponCount)].name;
+                itemIndex[i] = GetRandomIntInRange(weaponCount);
+                slotContent[i].sprite = weapon.allWeaponData[itemIndex[i]].weaponPrefab.GetComponent<SpriteRenderer>().sprite;
+                textSlots[i].text = weapon.allWeaponData[itemIndex[i]].weaponName;
             }
             else
             {
-                slotContent[i + 1].sprite = trinket.allTrinketData[GetRandomIntInRange(trinketCount)].trinketPrefab.GetComponent<SpriteRenderer>().sprite;
-                textSlots[i + 1].text = trinket.allTrinketData[GetRandomIntInRange(trinketCount)].name;
+                itemIndex[i] = GetRandomIntInRange(trinketCount);
+                slotContent[i].sprite = trinket.allTrinketData[itemIndex[i]].trinketPrefab.GetComponent<SpriteRenderer>().sprite;
+                textSlots[i].text = trinket.allTrinketData[itemIndex[i]].trinketName;
             }
         }
     }
+    public void SelectionHandler(Button button)
+    {
+        string index = button.name;
+        selectedIndex = int.Parse(index);
+    }
     public void ConfirmSelections()
     {
+        if (itemIndex[selectedIndex] < weapon.allWeaponData.Count &&
+            slotContent[selectedIndex].sprite == weapon.allWeaponData[itemIndex[selectedIndex]].weaponPrefab.GetComponent<SpriteRenderer>().sprite)
+        {
+            inventory.AddItem(weapon.allWeaponData[itemIndex[selectedIndex]].weaponPrefab.GetComponent<SpriteRenderer>().sprite, true);
+        }
+        else if (itemIndex[selectedIndex] < trinket.allTrinketData.Count &&
+                 slotContent[selectedIndex].sprite == trinket.allTrinketData[itemIndex[selectedIndex]].trinketPrefab.GetComponent<SpriteRenderer>().sprite)
+        {
+            inventory.AddItem(trinket.allTrinketData[itemIndex[selectedIndex]].trinketPrefab.GetComponent<SpriteRenderer>().sprite, false);
+        }
         shop.SetActive(false);
     }
     int GetRandomIntInRange(int to)
     {
-        return Random.Range(0, to);
+        return UnityEngine.Random.Range(0, to);
     }
 }
