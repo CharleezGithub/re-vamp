@@ -13,9 +13,3 @@ public class WeaponData : ScriptableObject
     public GameObject weaponPrefab;
 }
 
-[CreateAssetMenu(menuName = "Data/WeaponDataCollection")]
-public class WeaponDataCollection : ScriptableObject
-{
-    public WeaponData[] weapons;
-    public TrinketData[] trinkets;    
-}

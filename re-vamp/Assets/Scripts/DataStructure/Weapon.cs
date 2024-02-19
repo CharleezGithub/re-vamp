@@ -5,15 +5,14 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    public WeaponData weaponData; // Reference to the ScriptableObject
     public List<WeaponData> allWeaponData = new List<WeaponData>();
     void Awake()
     {
         LoadAllWeaponData();        
     }
-    void LoadAllWeaponData()
+    public void LoadAllWeaponData()
     {
-        allWeaponData.Clear(); // Clear the list to avoid duplicates if Start is called multiple times
+        allWeaponData.Clear();
 
         // Find all GUIDs of ScriptableObject files of type WeaponData
         string[] guids = AssetDatabase.FindAssets("t:WeaponData");

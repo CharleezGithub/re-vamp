@@ -5,13 +5,12 @@ using UnityEngine;
 
 public class Trinket : MonoBehaviour
 {
-    public TrinketData trinketData;
     public List<TrinketData> allTrinketData = new List<TrinketData>();
     void Awake()
     {
         LoadAllTrinketnData();
     }
-    void LoadAllTrinketnData()
+    public void LoadAllTrinketnData()
     {
         allTrinketData.Clear(); // Clear the list to avoid duplicates if Start is called multiple times
         // Find all GUIDs of ScriptableObject files of type TrinketData
