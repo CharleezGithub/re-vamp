@@ -1,0 +1,64 @@
+﻿{
+  "weapons": [
+    {
+      "name": "Greatsword",
+      "attributes": {
+        "description": "It’s almost too big. A massive blade fit for a warrior of legend.",
+        "item": "Melee Weapon",
+        "damage": 100,
+        "level": 1,
+        "levelMultiplier": 1.5
+      }
+    },
+    {
+      "name": "Silverware",
+      "attributes": {
+        "description": "SO SHINY. A set of elegant silver utensils.",
+        "item": "Utensil Weapon",
+        "damage": 50,
+        "level": 1,
+        "levelMultiplier": 1.5
+      }
+    },
+    {
+      "name": "Spelltome",
+      "attributes": {
+        "description": "So much untapped power! A mystical book filled with arcane secrets.",
+        "item": "Magic Weapon",
+        "damage": 80,
+        "level": 1,
+        "levelMultiplier": 1.5
+      }
+    },
+    {
+      "name": "Religious Text",
+      "attributes": {
+        "description": "הֲגָנָה. An ancient text with divine powers.",
+        "item": "Religious Artifact",
+        "damage": 60,
+        "level": 1,
+        "levelMultiplier": 1.5
+      }
+    },
+    {
+      "name": "Religious Text 2.0",
+      "attributes": {
+        "description": "Divine intervention. A sacred book radiating holy energy.",
+        "item": "Religious Artifact",
+        "damage": 70,
+        "level": 1,
+        "levelMultiplier": 1.5
+      }
+    },
+    {
+      "name": "Religious Text Supreme",
+      "attributes": {
+        "description": "Holy heck. The ultimate tome of divine power.",
+        "item": "Legendary Religious Artifact",
+        "damage": 120,
+        "level": 1,
+        "levelMultiplier": 1.5
+      }
+    }
+  ]
+}

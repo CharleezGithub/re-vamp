@@ -6,8 +6,9 @@ using UnityEngine.UI;
 public class PlayerHealthBar : MonoBehaviour
 {
     public Slider healthBar;
-    void Update()
+    public Health health;
+    private void Update()
     {
-        healthBar.value = GetComponent<Health>().currentHealth;
+        healthBar.value = health.currentHealth;
     }
 }
