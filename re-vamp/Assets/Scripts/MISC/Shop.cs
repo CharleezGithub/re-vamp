@@ -28,7 +28,7 @@ public class Shop : MonoBehaviour
     }
     void Awake()
     {
-        shop.SetActive(false);        
+        shop.SetActive(false);
     }
     public void ShowShop(bool active)
     {
@@ -44,7 +44,6 @@ public class Shop : MonoBehaviour
     void LoadSpritesAndText(int slotCount, int weaponCount, int trinketCount)
     {
         itemIndex = new int[slotCount + 1];
-        Debug.Log(weapon.allWeaponData.Count);
         itemIndex[0] = GetRandomIntInRange(weaponCount);
         slotContent[0].sprite = weapon.allWeaponData[itemIndex[0]].weaponPrefab.GetComponent<SpriteRenderer>().sprite;
         textSlots[0].text = weapon.allWeaponData[itemIndex[0]].weaponName;
@@ -52,15 +51,29 @@ public class Shop : MonoBehaviour
         for (int i = 1; i <= slotCount; i++)
         {
             int x = GetRandomIntInRange(trinketCount);
-            if (x > weaponCount)
+            if (x >= weaponCount)
             {
                 itemIndex[i] = GetRandomIntInRange(weaponCount);
+                for (int j = 0; j <= i; j++)
+                {
+                    if (slotContent[j].sprite == weapon.allWeaponData[itemIndex[i]].weaponPrefab.GetComponent<SpriteRenderer>().sprite)
+                    {
+                        itemIndex[i] = GetRandomIntInRange(weaponCount);
+                    }
+                }
                 slotContent[i].sprite = weapon.allWeaponData[itemIndex[i]].weaponPrefab.GetComponent<SpriteRenderer>().sprite;
                 textSlots[i].text = weapon.allWeaponData[itemIndex[i]].weaponName;
             }
             else
             {
                 itemIndex[i] = GetRandomIntInRange(trinketCount);
+                for (int j = 1; j <= i; j++)
+                {
+                    if (slotContent[j].sprite == trinket.allTrinketData[itemIndex[i]].trinketPrefab.GetComponent<SpriteRenderer>().sprite)
+                    {
+                        itemIndex[i] = GetRandomIntInRange(trinketCount);
+                    }
+                }
                 slotContent[i].sprite = trinket.allTrinketData[itemIndex[i]].trinketPrefab.GetComponent<SpriteRenderer>().sprite;
                 textSlots[i].text = trinket.allTrinketData[itemIndex[i]].trinketName;
             }
@@ -89,4 +102,12 @@ public class Shop : MonoBehaviour
     {
         return UnityEngine.Random.Range(0, to);
     }
+}
+
+public struct Item
+{
+    public Sprite sprite;
+    public string name;
+    public bool isWeapon;
+    public bool isMaxLevel;
 }

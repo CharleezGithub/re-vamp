@@ -42,7 +42,6 @@ public class Inventory : MonoBehaviour
             }
         }
     }
-
     public void AddItem(Sprite itemSprite, bool isWeapon)
     {
         Transform parentObject = isWeapon ? weaponRef.transform : trinketRef.transform;

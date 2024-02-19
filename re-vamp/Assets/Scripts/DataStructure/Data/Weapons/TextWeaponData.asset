@@ -17,4 +17,4 @@ MonoBehaviour:
   damage: 2
   level: 0
   levelMultiplier: 0
-  weaponPrefab: {fileID: 4224563350556370684, guid: c8b296167d38a534fa3c57035203f8ae, type: 3}
+  weaponPrefab: {fileID: 4224563350556370684, guid: 2b794455186319e408d104f8acd68fa6, type: 3}
