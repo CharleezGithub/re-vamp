@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77c198c2232a035468a0814b43c9825c, type: 3}
   m_Name: TrinketData 2
   m_EditorClassIdentifier: 
-  trinketName: c
+  trinketName: Increase Damage
   description: 
   level: 0
   maxHealthIncrease: 0
@@ -24,4 +24,4 @@ MonoBehaviour:
   movementSpeedIncrease: 0
   viewDistanceIncrease: 0
   levelMultiplier: 0
-  trinketPrefab: {fileID: 8427938882397602699, guid: e8f4615206adbb140863fb2fff90e9e4, type: 3}
+  trinketPrefab: {fileID: 8427938882397602699, guid: 69f8419eb620e3e41867b3ebdf92ffe9, type: 3}

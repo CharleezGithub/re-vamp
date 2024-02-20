@@ -10,8 +10,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 53042319356948366, guid: 9a2906d6f44e6cc4f90e57c23e9f1d84, type: 3}
       propertyPath: m_Name
-      value: SpelltomeWeapon
+      value: BibleNewTestamentWeapon
       objectReference: {fileID: 0}
+    - target: {fileID: 5695987522607441928, guid: 9a2906d6f44e6cc4f90e57c23e9f1d84, type: 3}
+      propertyPath: weaponData
+      value: 
+      objectReference: {fileID: 11400000, guid: 2cd607dbac3a2854c95fab0bd5b7bc2d, type: 2}
     - target: {fileID: 6076893770685788500, guid: 9a2906d6f44e6cc4f90e57c23e9f1d84, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -63,7 +67,7 @@ PrefabInstance:
     - target: {fileID: 9152968605973622470, guid: 9a2906d6f44e6cc4f90e57c23e9f1d84, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0da8816368500794896f8483bdc382aa, type: 3}
+      objectReference: {fileID: 21300000, guid: 5ac025a1d7f30bc4d8a6edc8da34f3ee, type: 3}
     - target: {fileID: 9152968605973622470, guid: 9a2906d6f44e6cc4f90e57c23e9f1d84, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1

@@ -2485,8 +2485,8 @@ MonoBehaviour:
   - {fileID: 1586563077933048244}
   - {fileID: 8987621486545297944}
   - {fileID: 8870610866447788557}
-  weapon: {fileID: 0}
-  trinket: {fileID: 0}
+  weapon: {fileID: 485174837189829696}
+  trinket: {fileID: 4905560022094449687}
   fourthSlotActivated: 0
   shop: {fileID: 556786004114390300}
   inventory: {fileID: 8449090410979176298}
