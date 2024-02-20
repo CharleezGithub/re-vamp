@@ -93,7 +93,7 @@ public class Inventory : MonoBehaviour
         else if (!itemAdded)
         {
             Debug.Log("All fields are occupied.");
-            // Handle the case when all fields are occupied
+            // Handle the case when all fields are occupied even tho it is not suposed to happen
         }
     }
 
@@ -107,9 +107,6 @@ public class Inventory : MonoBehaviour
         fieldRect.sizeDelta = fieldSize;
         fieldRect.anchoredPosition = currentPosition;
 
-        currentPosition += offset; // Update current position with offset for the next field
-
-        // The following part is modified to initially not create an item image inside the field
-        // Item images will be added or updated later through the AddItem method
+        currentPosition += offset;
     }
 }

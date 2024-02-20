@@ -11,7 +11,7 @@ public class Weapon : MonoBehaviour
 
     void Awake()
     {
-        LoadAllWeaponData();        
+        LoadAllWeaponData();
     }
     public void LoadAllWeaponData()
     {

@@ -31,7 +31,8 @@ public class Shop : MonoBehaviour
     }
     void Awake()
     {
-        shop.SetActive(false); // Remove 
+        if (shop.activeSelf)
+            shop.SetActive(false);
     }
     public void ShowShop(bool active)
     {
@@ -53,33 +54,77 @@ public class Shop : MonoBehaviour
         textSlots[0].text = weapon.allWeaponData[itemIndex[0]].weaponName;
 
         for (int i = 1; i <= slotCount; i++)
-        {            
-            if (weaponCount >= trinketCount)
+        {
+            if (trinketCount >= weaponCount)
             {
-                itemIndex[i] = GetRandomIntInRange(weaponCount);        
-                for (int j = 0; j <= i; j++)
-                {
-                    if (slotContent[j].sprite == weapon.allWeaponData[itemIndex[i]].weaponPrefab.GetComponent<SpriteRenderer>().sprite)
-                    {
-                        itemIndex[i] = GetRandomIntInRange(weaponCount);
-                    }
-                }
-                slotContent[i].sprite = weapon.allWeaponData[itemIndex[i]].weaponPrefab.GetComponent<SpriteRenderer>().sprite;
-                textSlots[i].text = weapon.allWeaponData[itemIndex[i]].weaponName;
+                IfMoreTrinkets(i, weaponCount, trinketCount);
             }
             else
             {
-                itemIndex[i] = GetRandomIntInRange(trinketCount);
-                for (int j = 1; j <= i; j++)
-                {
-                    if (slotContent[j].sprite == trinket.allTrinketData[itemIndex[i]].trinketPrefab.GetComponent<SpriteRenderer>().sprite)
-                    {
-                        itemIndex[i] = GetRandomIntInRange(trinketCount);
-                    }
-                }
-                slotContent[i].sprite = trinket.allTrinketData[itemIndex[i]].trinketPrefab.GetComponent<SpriteRenderer>().sprite;
-                textSlots[i].text = trinket.allTrinketData[itemIndex[i]].trinketName;
+                IfMoreWeapons(i, trinketCount, weaponCount);
             }
+        }
+    }
+    void IfMoreWeapons(int i, int weaponCount, int trinketCount)
+    {
+        if (GetRandomIntInRange(weaponCount) >= trinketCount)
+        {
+            itemIndex[i] = GetRandomIntInRange(trinketCount);
+            for (int j = 0; j <= i; j++)
+            {
+                if (slotContent[j].sprite == trinket.allTrinketData[itemIndex[i]].trinketPrefab.GetComponent<SpriteRenderer>().sprite)
+                {
+                    itemIndex[i] = GetRandomIntInRange(trinketCount);
+                    j--;
+                }
+            }
+            slotContent[i].sprite = trinket.allTrinketData[itemIndex[i]].trinketPrefab.GetComponent<SpriteRenderer>().sprite;
+            textSlots[i].text = trinket.allTrinketData[itemIndex[i]].trinketName;
+        }
+        else
+        {
+            itemIndex[i] = GetRandomIntInRange(weaponCount);
+            for (int j = 0; j <= i; j++)
+            {
+                if (slotContent[j].sprite == weapon.allWeaponData[itemIndex[i]].weaponPrefab.GetComponent<SpriteRenderer>().sprite)
+                {
+                    itemIndex[i] = GetRandomIntInRange(weaponCount);
+                    j--;
+                }
+            }
+            slotContent[i].sprite = weapon.allWeaponData[itemIndex[i]].weaponPrefab.GetComponent<SpriteRenderer>().sprite;
+            textSlots[i].text = weapon.allWeaponData[itemIndex[i]].weaponName;
+        }
+    }
+    void IfMoreTrinkets(int i, int weaponCount, int trinketCount)
+    {
+        if (GetRandomIntInRange(trinketCount) >= weaponCount)
+        {
+            itemIndex[i] = GetRandomIntInRange(weaponCount);
+            for (int j = 0; j <= i; j++)
+            {
+                if (slotContent[j].sprite == weapon.allWeaponData[itemIndex[i]].weaponPrefab.GetComponent<SpriteRenderer>().sprite)
+                {
+                    itemIndex[i] = GetRandomIntInRange(weaponCount);
+                    j--;
+                }
+            }
+            slotContent[i].sprite = weapon.allWeaponData[itemIndex[i]].weaponPrefab.GetComponent<SpriteRenderer>().sprite;
+            textSlots[i].text = weapon.allWeaponData[itemIndex[i]].weaponName;
+        }
+        else
+        {
+            itemIndex[i] = GetRandomIntInRange(trinketCount);
+            for (int j = 0; j <= i; j++)
+            {
+                if (slotContent[j].sprite == trinket.allTrinketData[itemIndex[i]].trinketPrefab.GetComponent<SpriteRenderer>().sprite)
+                {
+                    itemIndex[i] = GetRandomIntInRange(trinketCount);
+                    j--;
+                }
+            }
+            slotContent[i].sprite = trinket.allTrinketData[itemIndex[i]].trinketPrefab.GetComponent<SpriteRenderer>().sprite;
+            textSlots[i].text = trinket.allTrinketData[itemIndex[i]].trinketName;
         }
     }
     public void SelectionHandler(Button button)

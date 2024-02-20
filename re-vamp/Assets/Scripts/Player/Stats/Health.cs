@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -15,9 +16,12 @@ public class Health : MonoBehaviour
 
     public void Update()
     {
+        if (Input.GetMouseButtonDown(2))
+            TakeDamage(10);
+
         if (currentHealth <= 0)
         {
-            // Game Over
+            SceneManager.LoadScene("GameOver");
         }
         if (healthText != null && currentHealth > 0)
         {
