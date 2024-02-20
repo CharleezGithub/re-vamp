@@ -774,9 +774,25 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -4316335013159113176, guid: 2affb2869b68eb246a1935ed187742d6, type: 3}
+      propertyPath: minScale
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4316335013159113176, guid: 2affb2869b68eb246a1935ed187742d6, type: 3}
       propertyPath: gameCamera
       value: 
       objectReference: {fileID: 918827020}
+    - target: {fileID: -4316335013159113176, guid: 2affb2869b68eb246a1935ed187742d6, type: 3}
+      propertyPath: prefabToSpawn
+      value: 
+      objectReference: {fileID: 5374765452692168027, guid: edd24ed6e7d82a145a9e40385a0c0169, type: 3}
+    - target: {fileID: -4316335013159113176, guid: 2affb2869b68eb246a1935ed187742d6, type: 3}
+      propertyPath: minimumDistance
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -4316335013159113176, guid: 2affb2869b68eb246a1935ed187742d6, type: 3}
+      propertyPath: timeBetweenExplotions
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3038319016890711345, guid: 2affb2869b68eb246a1935ed187742d6, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1278,7 +1294,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 931129801}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:

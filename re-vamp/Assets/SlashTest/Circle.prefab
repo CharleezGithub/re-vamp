@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2696306104180956463}
   - component: {fileID: 5443796594646496454}
   - component: {fileID: 2493915752719600564}
+  - component: {fileID: 2904106994589054095}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.035848916, b: 0.035848916, a: 0.5019608}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -97,4 +98,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b0625996099ed49a60a8daf2127a96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 4
+  lifetime: 0.5
+--- !u!114 &2904106994589054095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374765452692168027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77bbf6a567ff9b44b86e3e4f686f23db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleSystem: {fileID: 3914499571747287247, guid: 46d7232c5cd054e44aecce7d4cf51403, type: 3}
+  EnemyLayer:
+    serializedVersion: 2
+    m_Bits: 8
