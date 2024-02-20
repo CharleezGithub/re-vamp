@@ -45,6 +45,8 @@ public class Explotion : MonoBehaviour
         }
         else
         {
+            gameCamera = Camera.main;
+            if (prefabToSpawn == null || gameCamera == null)
             Debug.LogError("Prefab, Camera, or Player position not set correctly!");
         }
     }
