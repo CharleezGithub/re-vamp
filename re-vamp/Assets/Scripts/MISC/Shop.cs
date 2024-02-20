@@ -43,6 +43,8 @@ public class Shop : MonoBehaviour
     }
     void LoadSpritesAndText(int slotCount, int weaponCount, int trinketCount)
     {
+        var items = new Item[weaponCount + trinketCount];
+        //items[8].itemName;
         itemIndex = new int[slotCount + 1];
         itemIndex[0] = GetRandomIntInRange(weaponCount);
         slotContent[0].sprite = weapon.allWeaponData[itemIndex[0]].weaponPrefab.GetComponent<SpriteRenderer>().sprite;
@@ -63,6 +65,16 @@ public class Shop : MonoBehaviour
                 }
                 slotContent[i].sprite = weapon.allWeaponData[itemIndex[i]].weaponPrefab.GetComponent<SpriteRenderer>().sprite;
                 textSlots[i].text = weapon.allWeaponData[itemIndex[i]].weaponName;
+
+                if (slotContent.Any(x=> slotContent.Contains(x)))
+                {
+                    // Dupes detected
+                }
+
+                if (slotContent.Select(x=>x.sprite).Distinct().ToArray() != slotContent.Select(x=>x.sprite))
+                {
+                    // Dupes detected
+                }
             }
             else
             {
@@ -102,12 +114,4 @@ public class Shop : MonoBehaviour
     {
         return UnityEngine.Random.Range(0, to);
     }
-}
-
-public struct Item
-{
-    public Sprite sprite;
-    public string name;
-    public bool isWeapon;
-    public bool isMaxLevel;
 }

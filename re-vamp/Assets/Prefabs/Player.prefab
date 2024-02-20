@@ -356,7 +356,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecbf982688be7b74d9d06f28ca5ed58b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponData: {fileID: 0}
   allWeaponData: []
 --- !u!1 &1586563077933048244
 GameObject:
@@ -1033,7 +1032,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e84cf9ae2f11cde4daf7b3a68f6bb9a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trinketData: {fileID: 0}
   allTrinketData: []
 --- !u!1 &3636238981904894972
 GameObject:
@@ -1396,6 +1394,7 @@ GameObject:
   - component: {fileID: 6541668134400005208}
   - component: {fileID: 4148452497689194825}
   - component: {fileID: 287895459322927434}
+  - component: {fileID: -4316335013159113176}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1616,6 +1615,24 @@ MonoBehaviour:
   maxXP: 0
   level: 0
   shop: {fileID: 8021553260626320203}
+--- !u!114 &-4316335013159113176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3977218777653717955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e07ff57551c20784b97f489b1b157e62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabToSpawn: {fileID: 3390592955288566696, guid: df76420c525528747b2425e2a7ce72bb, type: 3}
+  gameCamera: {fileID: 0}
+  minScale: 1
+  maxScale: 3
+  minimumDistance: 3
+  timeBetweenExplotions: 1
 --- !u!1 &4166458222229957846
 GameObject:
   m_ObjectHideFlags: 0
@@ -2575,11 +2592,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e097990f2cc6d7a4eb94679ec90d383e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 0
-  healthText: {fileID: 1124330245236856710}
-  armour: 0
   healthBar: {fileID: 6486528259482461839}
+  health: {fileID: 2937292952063099603}
 --- !u!1 &8531814900488760998
 GameObject:
   m_ObjectHideFlags: 0
