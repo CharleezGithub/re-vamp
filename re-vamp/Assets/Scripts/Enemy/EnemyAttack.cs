@@ -1,43 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
+using Unity.VisualScripting;
 
-public class EnemyAttack : MonoBehaviour
+public class Timer : MonoBehaviour
 {
-    public GameObject player;
-    public LayerMask attackedLayer;
-    public float range = 5f;
-    public int damage = 1;
-    public float cooldown = 1f;
+    public int damage = 5;
 
-    Collider2D AttackRange;
-    bool canAttack;
+    public float attackCooldownTime = 1f;
+    private bool canAttack;
     private void Start()
     {
-        canAttack = true;
+        StartCoroutine(AttackCooldown());
     }
-    void Update()
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        Attacklogic();
-    }
-    private void Attacklogic()
-    {
-        AttackRange = Physics2D.OverlapCircle(transform.position, range, attackedLayer);
-
-        if (AttackRange != null && canAttack)
+        // Check if the colliding object has the "Player" tag
+        if (collision.gameObject.CompareTag("Player") && canAttack)
         {
-            player.GetComponent<Health>().TakeDamage(damage);
-            canAttack = false;
-            Invoke(nameof(ResetAttack), cooldown);
+            collision.gameObject.GetComponent<Health>().TakeDamage(damage);
+            
+            StartCoroutine(AttackCooldown());
         }
     }
-    void ResetAttack()
+    IEnumerator AttackCooldown()
     {
+        canAttack = false;
+        yield return new WaitForSeconds(attackCooldownTime);
         canAttack = true;
-    }
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, range);
     }
 }

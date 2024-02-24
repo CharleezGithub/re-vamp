@@ -10,5 +10,6 @@ public class PlayerHealthBar : MonoBehaviour
     private void Update()
     {
         healthBar.value = health.currentHealth;
+        healthBar.maxValue = health.maxHealth;
     }
 }

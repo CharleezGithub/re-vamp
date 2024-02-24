@@ -8,7 +8,6 @@ public class EnemyHealth : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth;
-    public TextMeshProUGUI healthText;
     public Slider healthBar;
     public Vector3 healthBarOffset;
     void Start()
