@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class AttackScript : MonoBehaviour
+public class Attack : MonoBehaviour
 {
     public float attackRange = 1.0f;  // The range of the attack
     public LayerMask EnemyLayer;      // The layer where enemies are located

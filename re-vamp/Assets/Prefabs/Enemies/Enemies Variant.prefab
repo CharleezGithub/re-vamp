@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1484374937495995123, guid: 9d57dc381b4a6ff4d9b753b602171657, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1484374937495995123, guid: 9d57dc381b4a6ff4d9b753b602171657, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 4383543740120240416, guid: 9d57dc381b4a6ff4d9b753b602171657, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -48,6 +56,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5845987852504766233, guid: 9d57dc381b4a6ff4d9b753b602171657, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5845987852504766233, guid: 9d57dc381b4a6ff4d9b753b602171657, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5845987852504766233, guid: 9d57dc381b4a6ff4d9b753b602171657, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 5845987852504766233, guid: 9d57dc381b4a6ff4d9b753b602171657, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 5845987852504766233, guid: 9d57dc381b4a6ff4d9b753b602171657, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.099
+      objectReference: {fileID: 0}
+    - target: {fileID: 5845987852504766233, guid: 9d57dc381b4a6ff4d9b753b602171657, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.343
+      objectReference: {fileID: 0}
     - target: {fileID: 6046134551759293137, guid: 9d57dc381b4a6ff4d9b753b602171657, type: 3}
       propertyPath: m_Size.x
       value: 2.19
@@ -67,6 +99,14 @@ PrefabInstance:
     - target: {fileID: 6345199937532053562, guid: 9d57dc381b4a6ff4d9b753b602171657, type: 3}
       propertyPath: m_Name
       value: Enemies Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745316124243032128, guid: 9d57dc381b4a6ff4d9b753b602171657, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745316124243032128, guid: 9d57dc381b4a6ff4d9b753b602171657, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

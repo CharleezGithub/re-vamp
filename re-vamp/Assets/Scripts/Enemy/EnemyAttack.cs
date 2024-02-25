@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using Unity.VisualScripting;
 
-public class Timer : MonoBehaviour
+public class EnemyAttack : MonoBehaviour
 {
     public int damage = 5;
 
