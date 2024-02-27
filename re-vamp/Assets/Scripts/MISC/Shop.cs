@@ -4,11 +4,12 @@ using UnityEngine.UI;
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using System.Collections;
 
 public class Shop : MonoBehaviour
 {
     public TextMeshProUGUI[] textSlots;
-    public Image[] slotContent;
+    public GameObject[] slotContent;
     public GameObject[] slots;
 
     public Weapon weapon;
@@ -50,7 +51,7 @@ public class Shop : MonoBehaviour
         var items = new Item[weaponCount + trinketCount];
         itemIndex = new int[slotCount + 1];
         itemIndex[0] = GetRandomIntInRange(weaponCount);
-        slotContent[0].sprite = weapon.allWeaponData[itemIndex[0]].weaponPrefab.GetComponent<SpriteRenderer>().sprite;
+        slotContent[0] = weapon.allWeaponData[itemIndex[0]].weaponPrefab;
         textSlots[0].text = weapon.allWeaponData[itemIndex[0]].weaponName;
 
         for (int i = 1; i <= slotCount; i++)
@@ -72,13 +73,13 @@ public class Shop : MonoBehaviour
             itemIndex[i] = GetRandomIntInRange(trinketCount);
             for (int j = 0; j <= i; j++)
             {
-                if (slotContent[j].sprite == trinket.allTrinketData[itemIndex[i]].trinketPrefab.GetComponent<SpriteRenderer>().sprite)
+                if (slotContent[j] == trinket.allTrinketData[itemIndex[i]].trinketPrefab)
                 {
                     itemIndex[i] = GetRandomIntInRange(trinketCount);
                     j--;
                 }
             }
-            slotContent[i].sprite = trinket.allTrinketData[itemIndex[i]].trinketPrefab.GetComponent<SpriteRenderer>().sprite;
+            slotContent[i] = trinket.allTrinketData[itemIndex[i]].trinketPrefab;
             textSlots[i].text = trinket.allTrinketData[itemIndex[i]].trinketName;
         }
         else
@@ -86,13 +87,13 @@ public class Shop : MonoBehaviour
             itemIndex[i] = GetRandomIntInRange(weaponCount);
             for (int j = 0; j <= i; j++)
             {
-                if (slotContent[j].sprite == weapon.allWeaponData[itemIndex[i]].weaponPrefab.GetComponent<SpriteRenderer>().sprite)
+                if (slotContent[j] == weapon.allWeaponData[itemIndex[i]].weaponPrefab)
                 {
                     itemIndex[i] = GetRandomIntInRange(weaponCount);
                     j--;
                 }
             }
-            slotContent[i].sprite = weapon.allWeaponData[itemIndex[i]].weaponPrefab.GetComponent<SpriteRenderer>().sprite;
+            slotContent[i] = weapon.allWeaponData[itemIndex[i]].weaponPrefab;
             textSlots[i].text = weapon.allWeaponData[itemIndex[i]].weaponName;
         }
     }
@@ -103,13 +104,13 @@ public class Shop : MonoBehaviour
             itemIndex[i] = GetRandomIntInRange(weaponCount);
             for (int j = 0; j <= i; j++)
             {
-                if (slotContent[j].sprite == weapon.allWeaponData[itemIndex[i]].weaponPrefab.GetComponent<SpriteRenderer>().sprite)
+                if (slotContent[j] == weapon.allWeaponData[itemIndex[i]].weaponPrefab)
                 {
                     itemIndex[i] = GetRandomIntInRange(weaponCount);
                     j--;
                 }
             }
-            slotContent[i].sprite = weapon.allWeaponData[itemIndex[i]].weaponPrefab.GetComponent<SpriteRenderer>().sprite;
+            slotContent[i] = weapon.allWeaponData[itemIndex[i]].weaponPrefab;
             textSlots[i].text = weapon.allWeaponData[itemIndex[i]].weaponName;
         }
         else
@@ -117,13 +118,13 @@ public class Shop : MonoBehaviour
             itemIndex[i] = GetRandomIntInRange(trinketCount);
             for (int j = 0; j <= i; j++)
             {
-                if (slotContent[j].sprite == trinket.allTrinketData[itemIndex[i]].trinketPrefab.GetComponent<SpriteRenderer>().sprite)
+                if (slotContent[j] == trinket.allTrinketData[itemIndex[i]].trinketPrefab)
                 {
                     itemIndex[i] = GetRandomIntInRange(trinketCount);
                     j--;
                 }
             }
-            slotContent[i].sprite = trinket.allTrinketData[itemIndex[i]].trinketPrefab.GetComponent<SpriteRenderer>().sprite;
+            slotContent[i] = trinket.allTrinketData[itemIndex[i]].trinketPrefab;
             textSlots[i].text = trinket.allTrinketData[itemIndex[i]].trinketName;
         }
     }
@@ -135,12 +136,12 @@ public class Shop : MonoBehaviour
     public void ConfirmSelections()
     {
         if (itemIndex[selectedIndex] < weapon.allWeaponData.Count &&
-            slotContent[selectedIndex].sprite == weapon.allWeaponData[itemIndex[selectedIndex]].weaponPrefab.GetComponent<SpriteRenderer>().sprite)
+            slotContent[selectedIndex] == weapon.allWeaponData[itemIndex[selectedIndex]].weaponPrefab)
         {
             inventory.AddItem(weapon.allWeaponData[itemIndex[selectedIndex]].weaponPrefab.GetComponent<SpriteRenderer>().sprite, true);
         }
         else if (itemIndex[selectedIndex] < trinket.allTrinketData.Count &&
-                 slotContent[selectedIndex].sprite == trinket.allTrinketData[itemIndex[selectedIndex]].trinketPrefab.GetComponent<SpriteRenderer>().sprite)
+                 slotContent[selectedIndex] == trinket.allTrinketData[itemIndex[selectedIndex]].trinketPrefab)
         {
             inventory.AddItem(trinket.allTrinketData[itemIndex[selectedIndex]].trinketPrefab.GetComponent<SpriteRenderer>().sprite, false);
         }
@@ -151,4 +152,5 @@ public class Shop : MonoBehaviour
     {
         return UnityEngine.Random.Range(0, to);
     }
+
 }
