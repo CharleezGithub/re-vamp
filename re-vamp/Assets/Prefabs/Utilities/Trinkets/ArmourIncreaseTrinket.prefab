@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2841239883854818432, guid: 26fac5ffc70738c4db98b1ff9a5f2245, type: 3}
       propertyPath: m_Name
-      value: 6
+      value: ArmourIncreaseTrinket
       objectReference: {fileID: 0}
     - target: {fileID: 6803346413424314539, guid: 26fac5ffc70738c4db98b1ff9a5f2245, type: 3}
       propertyPath: m_Size.x
@@ -71,5 +71,26 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2841239883854818432, guid: 26fac5ffc70738c4db98b1ff9a5f2245, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 565152356853573526}
   m_SourcePrefab: {fileID: 100100000, guid: 26fac5ffc70738c4db98b1ff9a5f2245, type: 3}
+--- !u!1 &8427938882397602699 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2841239883854818432, guid: 26fac5ffc70738c4db98b1ff9a5f2245, type: 3}
+  m_PrefabInstance: {fileID: 6023583589597556491}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &565152356853573526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8427938882397602699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2534425b3f098348b0ffc36d19eae46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 3977218777653717955, guid: 2affb2869b68eb246a1935ed187742d6, type: 3}
