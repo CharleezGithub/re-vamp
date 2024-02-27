@@ -8,7 +8,7 @@ public class Explotion : MonoBehaviour
     public float minScale = 0.5f; // Minimum scale of the prefab
     public float maxScale = 2.0f; // Maximum scale of the prefab
     public float minimumDistance = 3.0f; // Minimum distance from the player
-    public float timeBetweenExplotions = 0.1f; // Minimum distance from the player
+    public float timeBetweenExplotions = 2.0f; // Minimum distance from the player
 
     void Start()
     {
@@ -39,15 +39,16 @@ public class Explotion : MonoBehaviour
             Debug.Log(distance);
             GameObject spawnedPrefab = Instantiate(prefabToSpawn, spawnPosition, Quaternion.identity);
 
-             //Randomly scale the prefab
+            //Randomly scale the prefab
             float scale = Random.Range(minScale, maxScale);
             spawnedPrefab.transform.localScale = new Vector3(scale, scale, 1); // Assuming a uniform scale in 2D
+
         }
         else
         {
             gameCamera = Camera.main;
             if (prefabToSpawn == null || gameCamera == null)
-            Debug.LogError("Prefab, Camera, or Player position not set correctly!");
+                Debug.LogError("Prefab, Camera, or Player position not set correctly!");
         }
     }
 
