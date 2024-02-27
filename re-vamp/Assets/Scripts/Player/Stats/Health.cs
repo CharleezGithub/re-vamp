@@ -23,6 +23,7 @@ public class Health : MonoBehaviour
         {
             SceneManager.LoadScene("GameOver");
         }
+
         if (healthText != null && currentHealth > 0)
         {
             healthText.text = "Health: " + currentHealth;
@@ -35,8 +36,12 @@ public class Health : MonoBehaviour
     {
         float damageReduction = (100 + armour) / 100;
         damage = damage / damageReduction;
-        currentHealth -= (int)damage;    
+        currentHealth -= (int)damage;
     }
+
     
-  
+    public void ArmorBoost(int armorBoostAmount)
+    {
+        armour += armorBoostAmount;
+    }
 }
