@@ -16,6 +16,8 @@ public class Attack : MonoBehaviour
     [Header("Debug")]
     public GameObject enemy;
 
+    public GameObject tempPrefabNeedsToBeReplacedWithTMPCode;
+
     void Start()
     {
         if (!isProjectile)
@@ -27,6 +29,8 @@ public class Attack : MonoBehaviour
         foreach (Collider2D hitEnemy in hitEnemies)
         {
             hitEnemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
+            Vector2 damagePopupPos = new Vector2(hitEnemy.transform.position.x, hitEnemy.transform.position.y - 5);
+            Instantiate(tempPrefabNeedsToBeReplacedWithTMPCode, damagePopupPos, Quaternion.identity);
         }
     }
     void OnDrawGizmosSelected()

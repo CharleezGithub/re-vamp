@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3680164441735452839}
   - component: {fileID: 221865627747626944}
   - component: {fileID: 5647894488918805526}
+  - component: {fileID: 7957256315240567458}
   m_Layer: 0
   m_Name: SpiderReal
   m_TagString: Untagged
@@ -98,3 +99,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+--- !u!114 &7957256315240567458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5179028921304923154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6822a4a95ba2c4e4ea2dc27cd5dd7bcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  healthText: {fileID: 0}
+  healthBar: {fileID: 0}
+  healthBarOffset: {x: 0, y: 0, z: 0}
