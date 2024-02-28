@@ -4904,13 +4904,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0194c45efb6d5714b89dd46c1ebebb38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isProjectile: 0
   attackRange: 1
+  attackInterval: 1
   EnemyLayer:
     serializedVersion: 2
     m_Bits: 8
   attackDamage: 10
-  attackInterval: 1
   enemy: {fileID: 0}
+  tempPrefabNeedsToBeReplacedWithTMPCode: {fileID: 0}
 --- !u!212 &7020844584225552852
 SpriteRenderer:
   m_ObjectHideFlags: 0
