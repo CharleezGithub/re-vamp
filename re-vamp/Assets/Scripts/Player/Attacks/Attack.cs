@@ -25,9 +25,7 @@ public class Attack : MonoBehaviour
     [Header("Debug")]
     GameObject enemy;
     bool isAttacking;
-
-    public GameObject tempPrefabNeedsToBeReplacedWithTMPCode;
-
+    bool projectileFired;
     private void Update()
     {
         if (!isAttacking && !isProjectile)
@@ -42,12 +40,6 @@ public class Attack : MonoBehaviour
         foreach (Collider2D hitEnemy in hitEnemies)
         {
             hitEnemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
-
-            if (tempPrefabNeedsToBeReplacedWithTMPCode != null)
-            {
-                Vector2 damagePopupPos = new Vector2(hitEnemy.transform.position.x, hitEnemy.transform.position.y - 5);
-                Instantiate(tempPrefabNeedsToBeReplacedWithTMPCode, damagePopupPos, Quaternion.identity);
-            }
         }
         isAttacking = false;
     }
@@ -59,21 +51,19 @@ public class Attack : MonoBehaviour
     }
 
     private void OnCollisionStay2D(Collision2D collision)
-    {      
+    {
+        projectileFired = false;
         if (isProjectile && collision.gameObject.CompareTag("Enemy"))
         {
             enemy = collision.gameObject;
+            if(!projectileFired)
             StartCoroutine(ProjectileAttack());
         }
     }
     IEnumerator ProjectileAttack()
     {
-        bool projectileFired = false;
-
-        yield return new WaitForSeconds(projectileAttackInterval);
         projectileFired = true;
-
-        if (!projectileFired)
+        yield return new WaitForSeconds(projectileAttackInterval);
         enemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
     }
 }
