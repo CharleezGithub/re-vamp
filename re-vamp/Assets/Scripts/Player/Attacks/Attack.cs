@@ -12,6 +12,10 @@ public class Attack : MonoBehaviour
     public float attackRange = 1.0f;  // The range of the attack
     public float attackInterval = 1.0f; // Time between each attack in seconds
     [Space(10)]
+        
+    [Header("If a projectile")]
+    public float projectileAttackInterval = 0.1f; // Time between each attack in seconds
+    [Space(10)]
 
     [Header("Necesary variables")]
     public LayerMask EnemyLayer; // The layer where enemies are located
@@ -39,13 +43,12 @@ public class Attack : MonoBehaviour
         {
             hitEnemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
 
-            //if (tempPrefabNeedsToBeReplacedWithTMPCode != null)
-            //{
-            //    Vector2 damagePopupPos = new Vector2(hitEnemy.transform.position.x, hitEnemy.transform.position.y - 5);
-            //    Instantiate(tempPrefabNeedsToBeReplacedWithTMPCode, damagePopupPos, Quaternion.identity);
-            //}
+            if (tempPrefabNeedsToBeReplacedWithTMPCode != null)
+            {
+                Vector2 damagePopupPos = new Vector2(hitEnemy.transform.position.x, hitEnemy.transform.position.y - 5);
+                Instantiate(tempPrefabNeedsToBeReplacedWithTMPCode, damagePopupPos, Quaternion.identity);
+            }
         }
-
         isAttacking = false;
     }
     void OnDrawGizmosSelected()
@@ -55,15 +58,22 @@ public class Attack : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        bool isCorutineStarted = false;
-        if (isProjectile && CompareTag("Enemy") && !isCorutineStarted)
+    private void OnCollisionStay2D(Collision2D collision)
+    {      
+        if (isProjectile && collision.gameObject.CompareTag("Enemy"))
         {
-            isCorutineStarted = true;
-            attackRange = 0;
-            attackInterval = 0.1f;
-            StartCoroutine(AutoAttack());
+            enemy = collision.gameObject;
+            StartCoroutine(ProjectileAttack());
         }
+    }
+    IEnumerator ProjectileAttack()
+    {
+        bool projectileFired = false;
+
+        yield return new WaitForSeconds(projectileAttackInterval);
+        projectileFired = true;
+
+        if (!projectileFired)
+        enemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
     }
 }
