@@ -39,11 +39,11 @@ public class Attack : MonoBehaviour
         {
             hitEnemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
 
-            if (tempPrefabNeedsToBeReplacedWithTMPCode != null)
-            {
-                Vector2 damagePopupPos = new Vector2(hitEnemy.transform.position.x, hitEnemy.transform.position.y - 5);
-                Instantiate(tempPrefabNeedsToBeReplacedWithTMPCode, damagePopupPos, Quaternion.identity);
-            }
+            //if (tempPrefabNeedsToBeReplacedWithTMPCode != null)
+            //{
+            //    Vector2 damagePopupPos = new Vector2(hitEnemy.transform.position.x, hitEnemy.transform.position.y - 5);
+            //    Instantiate(tempPrefabNeedsToBeReplacedWithTMPCode, damagePopupPos, Quaternion.identity);
+            //}
         }
 
         isAttacking = false;
@@ -57,9 +57,13 @@ public class Attack : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (isProjectile && CompareTag("Enemy"))
+        bool isCorutineStarted = false;
+        if (isProjectile && CompareTag("Enemy") && !isCorutineStarted)
         {
-            GetComponent<EnemyHealth>().TakeDamage(attackDamage);
+            isCorutineStarted = true;
+            attackRange = 0;
+            attackInterval = 0.1f;
+            StartCoroutine(AutoAttack());
         }
     }
 }
