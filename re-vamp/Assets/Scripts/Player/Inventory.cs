@@ -49,8 +49,10 @@ public class Inventory : MonoBehaviour
         bool duplicateFound = false;
 
         // Iterate over each field to find the first one without an item sprite or to detect duplicates
-        foreach (Transform fieldTransform in parentObject)
+        for (int i = 0; i < parentObject.childCount; i++)
         {
+            Transform fieldTransform = parentObject.GetChild(i);
+
             // Assuming each field has exactly one child used for the item image
             if (fieldTransform.childCount > 0)
             {
@@ -75,13 +77,11 @@ public class Inventory : MonoBehaviour
             }
             else
             {
-                // No child image found, add one
-                GameObject newItemGO = new GameObject("Item Image", typeof(Image));
-                newItemGO.transform.SetParent(fieldTransform, false);
-                Image newItemImage = newItemGO.GetComponent<Image>();
-                newItemImage.sprite = itemSprite;
-                newItemImage.rectTransform.sizeDelta = spriteSize;
-                itemAdded = true;
+                var trinketScript = trinketRef.GetComponent<Trinket>();
+                GameObject prefab = trinketScript.allTrinketData[i].trinketPrefab;
+
+                Instantiate(prefab, Vector2.zero, Quaternion.identity, fieldTransform);
+
                 break; // Item added, no need to continue
             }
         }
