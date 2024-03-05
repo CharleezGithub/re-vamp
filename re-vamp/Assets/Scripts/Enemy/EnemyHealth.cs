@@ -23,5 +23,17 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-    }   
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+        Destroy(collision.gameObject);
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Destroy(collision.gameObject);
+    }
+
 }

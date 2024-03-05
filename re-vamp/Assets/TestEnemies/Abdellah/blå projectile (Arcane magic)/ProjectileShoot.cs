@@ -18,7 +18,7 @@ public class ProjectileShoot : MonoBehaviour
 
         if (timer >= interval)
         {
-            transform.Rotate(new Vector3(0, UnityEngine.Random.Range(0, 380),0), Space.Self);
+            transform.Rotate(new Vector3(0, 0, UnityEngine.Random.Range(0, 380)), Space.Self);
             Instantiate(ProjectilePrefab, Launcher.position, transform.rotation);   
 
             
