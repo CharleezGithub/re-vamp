@@ -29,6 +29,7 @@ public class Attack : MonoBehaviour
     public GameObject tempPrefabNeedsToBeReplacedWithTMPCode;
     public GameObject damagePopupPrefab; // Assign your TMP prefab in the inspector.
 
+    bool projectileFired;
     private void Update()
     {
         if (!isAttacking && !isProjectile)
@@ -68,21 +69,19 @@ public class Attack : MonoBehaviour
     }
 
     private void OnCollisionStay2D(Collision2D collision)
-    {      
+    {
+        projectileFired = false;
         if (isProjectile && collision.gameObject.CompareTag("Enemy"))
         {
             enemy = collision.gameObject;
+            if(!projectileFired)
             StartCoroutine(ProjectileAttack());
         }
     }
     IEnumerator ProjectileAttack()
     {
-        bool projectileFired = false;
-
-        yield return new WaitForSeconds(projectileAttackInterval);
         projectileFired = true;
-
-        if (!projectileFired)
+        yield return new WaitForSeconds(projectileAttackInterval);
         enemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
     }
 }

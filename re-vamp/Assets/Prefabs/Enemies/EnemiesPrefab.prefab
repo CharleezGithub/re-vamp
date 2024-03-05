@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 8189452500120344088}
   - component: {fileID: -2659122995100372143}
   - component: {fileID: 9162303777827433409}
+  - component: {fileID: 7182153989463064102}
   m_Layer: 3
   m_Name: EnemiesPrefab
   m_TagString: Enemy
@@ -311,6 +312,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+--- !u!95 &7182153989463064102
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6345199937532053562}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 93620d37604ed91498fc3bad5658b74a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &3243156066664475929
 PrefabInstance:
   m_ObjectHideFlags: 0
