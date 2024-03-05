@@ -1,12 +1,26 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-public class Damagepopup : MonoBehaviour
+public class DamagePopup : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public void Setup(int damageAmount) { 
+    public static DamagePopup current;
+
+    public GameObject prefab;
+
+    public void Awake()
+    {
+        current = this;
     }
 
+    public static void CreatePopUp(Vector3 position, string text) // Correct method name
+    {
+        var popup = Instantiate(current.prefab, position, Quaternion.identity);
+        var tmp = popup.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        tmp.text = text;
+        Destroy(popup, 1f);
+    }
 
 }

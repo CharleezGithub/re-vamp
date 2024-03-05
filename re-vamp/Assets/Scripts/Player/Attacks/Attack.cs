@@ -25,6 +25,9 @@ public class Attack : MonoBehaviour
     [Header("Debug")]
     GameObject enemy;
     bool isAttacking;
+
+    public GameObject damagePopupPrefab; // Assign your TMP prefab in the inspector.
+
     bool projectileFired;
     private void Update()
     {
@@ -40,9 +43,12 @@ public class Attack : MonoBehaviour
         foreach (Collider2D hitEnemy in hitEnemies)
         {
             hitEnemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
+            DamagePopup.CreatePopUp(hitEnemy.transform.position, attackDamage.ToString());
         }
         isAttacking = false;
     }
+
+    // Method to call when damage is dealt.
     void OnDrawGizmosSelected()
     {
         // Display the attack range in the editor
