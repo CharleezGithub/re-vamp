@@ -30,7 +30,6 @@ public class DamageIndicator : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        // Your logic for reducing enemy health goes here
 
         ShowDamage(damage);
     }

@@ -27,6 +27,7 @@ public class Attack : MonoBehaviour
     bool isAttacking;
 
     public GameObject tempPrefabNeedsToBeReplacedWithTMPCode;
+    public GameObject damagePopupPrefab; // Assign your TMP prefab in the inspector.
 
     private void Update()
     {
@@ -47,9 +48,17 @@ public class Attack : MonoBehaviour
             {
                 Vector2 damagePopupPos = new Vector2(hitEnemy.transform.position.x, hitEnemy.transform.position.y - 5);
                 Instantiate(tempPrefabNeedsToBeReplacedWithTMPCode, damagePopupPos, Quaternion.identity);
+                ShowDamagePopup(attackDamage,damagePopupPos);
             }
         }
         isAttacking = false;
+    }
+
+    // Method to call when damage is dealt.
+    public void ShowDamagePopup(int damageAmount,Vector2 damagePopupPos)
+    {
+        GameObject popup = Instantiate(damagePopupPrefab,damagePopupPos, Quaternion.identity);
+        popup.GetComponent<DamagePopup>().Setup(damageAmount);
     }
     void OnDrawGizmosSelected()
     {
