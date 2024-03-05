@@ -520,13 +520,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0194c45efb6d5714b89dd46c1ebebb38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isProjectile: 0
   attackRange: 1
+  attackInterval: 1
+  projectileAttackInterval: 0.1
   EnemyLayer:
     serializedVersion: 2
     m_Bits: 8
   attackDamage: 10
-  attackInterval: 1
-  enemy: {fileID: 931129801}
+  tempPrefabNeedsToBeReplacedWithTMPCode: {fileID: 0}
+  damagePopupPrefab: {fileID: 0}
 --- !u!114 &285182220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -910,6 +913,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5670154961778921473, guid: 2affb2869b68eb246a1935ed187742d6, type: 3}
+      propertyPath: damagePopupPrefab
+      value: 
+      objectReference: {fileID: 852977226766190557, guid: 2ecf58f9131b02846b230038da512eec, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1473,9 +1480,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
-  healthText: {fileID: 0}
-  healthBar: {fileID: 1416628527}
-  healthBarOffset: {x: 0, y: 0.2, z: 0}
 --- !u!114 &931129809
 MonoBehaviour:
   m_ObjectHideFlags: 0
