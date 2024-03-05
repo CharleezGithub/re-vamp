@@ -9,6 +9,7 @@ public class DamagePopup : MonoBehaviour
     public static DamagePopup current;
 
     public GameObject prefab;
+
     public void Awake()
     {
         current = this;
