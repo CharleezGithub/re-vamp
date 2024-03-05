@@ -13,18 +13,22 @@ public class ProjectileBehaviour : MonoBehaviour
        
         transform.position += transform.right * Time.deltaTime * speed;
     }
+
+
     
-    private void OnCollisionEnter2D(Collision2D collision)
+    
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.collider.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
-            Physics2D.IgnoreCollision(collision.collider, gameObject.GetComponent<Collider2D>());
+            Physics2D.IgnoreCollision(collision, gameObject.GetComponent<Collider2D>());
             return;
         }
         Destroy(gameObject);
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnCollisionE2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Player"))
         {
