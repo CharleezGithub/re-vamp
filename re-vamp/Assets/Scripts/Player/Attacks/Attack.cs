@@ -28,7 +28,6 @@ public class Attack : MonoBehaviour
 
     public GameObject damagePopupPrefab; // Assign your TMP prefab in the inspector.
 
-    bool projectileFired;
     private void Update()
     {
         if (!isAttacking && !isProjectile)
@@ -47,7 +46,6 @@ public class Attack : MonoBehaviour
         }
         isAttacking = false;
     }
-
     // Method to call when damage is dealt.
     void OnDrawGizmosSelected()
     {
@@ -55,21 +53,11 @@ public class Attack : MonoBehaviour
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }
-
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        projectileFired = false;
         if (isProjectile && collision.gameObject.CompareTag("Enemy"))
         {
-            enemy = collision.gameObject;
-            if(!projectileFired)
-            StartCoroutine(ProjectileAttack());
+            collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
         }
-    }
-    IEnumerator ProjectileAttack()
-    {
-        projectileFired = true;
-        yield return new WaitForSeconds(projectileAttackInterval);
-        enemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
     }
 }

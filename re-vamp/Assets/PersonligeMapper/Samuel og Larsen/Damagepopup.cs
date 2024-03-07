@@ -14,7 +14,6 @@ public class DamagePopup : MonoBehaviour
     {
         current = this;
     }
-
     public static void CreatePopUp(Vector3 position, string text) // Correct method name
     {
         var popup = Instantiate(current.prefab, position, Quaternion.identity);
