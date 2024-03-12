@@ -36,7 +36,18 @@ public class AudioManager : MonoBehaviour
         return Instance.audioLibrary.Clips.First(x => x.name == nameOfClip);
     }
 
+    public static AudioSource PlaySound(AudioClip clip, Vector3 sourcePos, bool manuallyHandle = false, bool is3D = true, bool loop = false, bool fadeIn = false)
+    {
+        return PlaySoundInternal(clip, sourcePos, manuallyHandle, is3D, loop, fadeIn);
+    }
+
     public static AudioSource PlaySound(string nameOfClip, Vector3 sourcePos, bool manuallyHandle = false, bool is3D = true, bool loop = false, bool fadeIn = false)
+    {
+        AudioClip clip = FindAudioClip(nameOfClip);
+        return PlaySoundInternal(clip, sourcePos, manuallyHandle, is3D, loop, fadeIn);
+    }
+
+    private static AudioSource PlaySoundInternal(AudioClip clip, Vector3 sourcePos, bool manuallyHandle, bool is3D, bool loop, bool fadeIn)
     {
         if (Instance == null)
         {
@@ -47,7 +58,7 @@ public class AudioManager : MonoBehaviour
         var sourceObject = new GameObject("SoundSource");
         var audioSource = sourceObject.AddComponent<AudioSource>();
         audioSource.loop = loop;
-        audioSource.clip = FindAudioClip(nameOfClip);
+        audioSource.clip = clip;
         sourceObject.transform.position = sourcePos;
         sourceObject.transform.parent = Instance.transform;
 
