@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6076893770685788500}
-  - component: {fileID: 5695987522607441928}
   - component: {fileID: 9152968605973622470}
   m_Layer: 0
   m_Name: WeaponPrefab
@@ -33,20 +32,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5695987522607441928
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 53042319356948366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecbf982688be7b74d9d06f28ca5ed58b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  allWeaponData: []
-  script: {fileID: 0}
 --- !u!212 &9152968605973622470
 SpriteRenderer:
   m_ObjectHideFlags: 0
