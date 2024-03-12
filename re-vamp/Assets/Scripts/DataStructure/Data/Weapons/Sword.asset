@@ -10,6 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14311d488efe33d47ac0fbd511f80239, type: 3}
+<<<<<<<< Updated upstream:re-vamp/Assets/Scripts/DataStructure/Data/Weapons/Sword.asset
   m_Name: Sword
   m_EditorClassIdentifier: 
   weaponName: Sword
@@ -18,3 +19,13 @@ MonoBehaviour:
   level: 0
   levelMultiplier: 0
   weaponPrefab: {fileID: 4224563350556370684, guid: 2b621588a85148b4cb3b6f970a478020, type: 3}
+========
+  m_Name: Arcane Spelltome
+  m_EditorClassIdentifier: 
+  weaponName: Arcane Spelltome
+  description: "\u201Cso much untapped power!\u201D"
+  damage: 2
+  level: 1
+  levelMultiplier: 0.25
+  weaponPrefab: {fileID: 4224563350556370684, guid: c8b296167d38a534fa3c57035203f8ae, type: 3}
+>>>>>>>> Stashed changes:re-vamp/Assets/Scripts/DataStructure/Data/Weapons/Arcane Spelltome.asset

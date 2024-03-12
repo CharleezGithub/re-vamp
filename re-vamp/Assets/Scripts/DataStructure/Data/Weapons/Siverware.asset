@@ -10,6 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14311d488efe33d47ac0fbd511f80239, type: 3}
+<<<<<<<< Updated upstream:re-vamp/Assets/Scripts/DataStructure/Data/Weapons/Siverware.asset
   m_Name: Siverware
   m_EditorClassIdentifier: 
   weaponName: Silverware
@@ -17,4 +18,13 @@ MonoBehaviour:
   damage: 0
   level: 0
   levelMultiplier: 0
+========
+  m_Name: Silverware
+  m_EditorClassIdentifier: 
+  weaponName: Silverware
+  description: "\u201DSO SHINY\u201D"
+  damage: 3
+  level: 1
+  levelMultiplier: 0.25
+>>>>>>>> Stashed changes:re-vamp/Assets/Scripts/DataStructure/Data/Weapons/Silverware.asset
   weaponPrefab: {fileID: 4224563350556370684, guid: 87df939ea7ed204408820de01c0793cc, type: 3}

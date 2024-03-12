@@ -50,7 +50,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2841239883854818432, guid: 26fac5ffc70738c4db98b1ff9a5f2245, type: 3}
       propertyPath: m_Name
+<<<<<<<< Updated upstream:re-vamp/Assets/Prefabs/Utilities/Trinkets/ProjectileSpeedTrinket.prefab
       value: 6 3
+========
+      value: Rusty Armor
+>>>>>>>> Stashed changes:re-vamp/Assets/Prefabs/Utilities/Trinkets/Rusty ArmorTrinket.prefab
       objectReference: {fileID: 0}
     - target: {fileID: 6803346413424314539, guid: 26fac5ffc70738c4db98b1ff9a5f2245, type: 3}
       propertyPath: m_Size.x
@@ -63,11 +67,19 @@ PrefabInstance:
     - target: {fileID: 6803346413424314539, guid: 26fac5ffc70738c4db98b1ff9a5f2245, type: 3}
       propertyPath: m_Sprite
       value: 
+<<<<<<<< Updated upstream:re-vamp/Assets/Prefabs/Utilities/Trinkets/ProjectileSpeedTrinket.prefab
       objectReference: {fileID: 21300000, guid: 63d4313333bd1694f8f0031a8d99dec5, type: 3}
+========
+      objectReference: {fileID: 21300000, guid: f0b148486936b434a84450b1342bd8ca, type: 3}
+>>>>>>>> Stashed changes:re-vamp/Assets/Prefabs/Utilities/Trinkets/Rusty ArmorTrinket.prefab
     - target: {fileID: 6803346413424314539, guid: 26fac5ffc70738c4db98b1ff9a5f2245, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7047185819431395602, guid: 26fac5ffc70738c4db98b1ff9a5f2245, type: 3}
+      propertyPath: trinketData
+      value: 
+      objectReference: {fileID: 11400000, guid: 013336f2eb899974487ecca6e04c3a21, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
