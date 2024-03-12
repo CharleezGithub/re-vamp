@@ -328,6 +328,16 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!1 &685263754 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1559225122894916435, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
+  m_PrefabInstance: {fileID: 8180645182630037764}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1085196484 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2946356819438270801, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
+  m_PrefabInstance: {fileID: 8180645182630037764}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2078010866
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -637,6 +647,30 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8449090410979176298, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
+      propertyPath: weaponFields
+      value: 
+      objectReference: {fileID: 685263754}
+    - target: {fileID: 8449090410979176298, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
+      propertyPath: trinketFields
+      value: 
+      objectReference: {fileID: 1085196484}
+    - target: {fileID: 8449090410979176298, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
+      propertyPath: spriteFieldSize.x
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 8449090410979176298, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
+      propertyPath: weaponFieldSize.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8686820780664016737, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
+      propertyPath: Wave
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8686820780664016737, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
+      propertyPath: timer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 9123607438885664302, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -645,9 +679,37 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 5853903429574151412, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
     - {fileID: 9201173502805327232, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
+    - {fileID: 82192234907006822, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
+    - {fileID: 3592481333792723116, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
+    - {fileID: 7506333067696107544, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
+    - {fileID: 1494792528039174394, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
+    - {fileID: 6728226877726585870, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
+    - {fileID: 2836106006037143789, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7893541483916679229, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8180645182630037766}
   m_SourcePrefab: {fileID: 100100000, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
+--- !u!1 &8180645182630037765 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7893541483916679229, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
+  m_PrefabInstance: {fileID: 8180645182630037764}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8180645182630037766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8180645182630037765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2363dfe09b23dc047b124adfcdb5f2d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trinkets: {fileID: 0}
+  weapons: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
