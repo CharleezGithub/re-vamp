@@ -4,14 +4,14 @@ using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
-    public int maxHealth = 100;
+    public float maxHealth = 100f;
     public int currentHealth;
     public TextMeshProUGUI healthText;
     public int armour;
 
     void Start()
     {
-        currentHealth = maxHealth;
+        currentHealth = (int)maxHealth;
     }
 
     public void Update()
@@ -39,7 +39,7 @@ public class Health : MonoBehaviour
         currentHealth -= (int)damage;
     }
 
-    
+
     public void ArmorBoost(int armorBoostAmount)
     {
         armour += armorBoostAmount;
