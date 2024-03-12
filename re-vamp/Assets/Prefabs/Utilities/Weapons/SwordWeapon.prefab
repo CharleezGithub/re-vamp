@@ -10,16 +10,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 53042319356948366, guid: 9a2906d6f44e6cc4f90e57c23e9f1d84, type: 3}
       propertyPath: m_Name
-<<<<<<<< Updated upstream:re-vamp/Assets/Prefabs/Utilities/Weapons/SwordWeapon.prefab
       value: SwordWeapon
-========
-      value: Bible
->>>>>>>> Stashed changes:re-vamp/Assets/Prefabs/Utilities/Weapons/BibleWeapon.prefab
       objectReference: {fileID: 0}
-    - target: {fileID: 5695987522607441928, guid: 9a2906d6f44e6cc4f90e57c23e9f1d84, type: 3}
-      propertyPath: weaponData
-      value: 
-      objectReference: {fileID: 11400000, guid: 5f5495e29409a0a44999c7edbfcc3e02, type: 2}
     - target: {fileID: 6076893770685788500, guid: 9a2906d6f44e6cc4f90e57c23e9f1d84, type: 3}
       propertyPath: m_LocalPosition.x
       value: 960
@@ -71,11 +63,7 @@ PrefabInstance:
     - target: {fileID: 9152968605973622470, guid: 9a2906d6f44e6cc4f90e57c23e9f1d84, type: 3}
       propertyPath: m_Sprite
       value: 
-<<<<<<<< Updated upstream:re-vamp/Assets/Prefabs/Utilities/Weapons/SwordWeapon.prefab
       objectReference: {fileID: 21300000, guid: 7817c857ba705e146ade44c38fa872cd, type: 3}
-========
-      objectReference: {fileID: 21300000, guid: 20819e4145de3e649993e2b5ec96723a, type: 3}
->>>>>>>> Stashed changes:re-vamp/Assets/Prefabs/Utilities/Weapons/BibleWeapon.prefab
     - target: {fileID: 9152968605973622470, guid: 9a2906d6f44e6cc4f90e57c23e9f1d84, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1

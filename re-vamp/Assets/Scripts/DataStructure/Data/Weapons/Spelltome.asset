@@ -10,7 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14311d488efe33d47ac0fbd511f80239, type: 3}
-<<<<<<<< Updated upstream:re-vamp/Assets/Scripts/DataStructure/Data/Weapons/Spelltome.asset
   m_Name: Spelltome
   m_EditorClassIdentifier: 
   weaponName: Spelltome
@@ -19,13 +18,3 @@ MonoBehaviour:
   level: 1
   levelMultiplier: 0
   weaponPrefab: {fileID: 4224563350556370684, guid: 2b794455186319e408d104f8acd68fa6, type: 3}
-========
-  m_Name: Bible
-  m_EditorClassIdentifier: 
-  weaponName: Bible
-  description: "\u201DDivine intervention\u201D"
-  damage: 5
-  level: 1
-  levelMultiplier: 0.25
-  weaponPrefab: {fileID: 4224563350556370684, guid: c8b296167d38a534fa3c57035203f8ae, type: 3}
->>>>>>>> Stashed changes:re-vamp/Assets/Scripts/DataStructure/Data/Weapons/Bible.asset
