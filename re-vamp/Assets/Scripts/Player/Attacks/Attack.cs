@@ -12,14 +12,14 @@ public class Attack : MonoBehaviour
     public float attackRange = 1.0f;  // The range of the attack
     public float attackInterval = 1.0f; // Time between each attack in seconds
     [Space(10)]
-        
+
     [Header("If a projectile")]
     public float projectileAttackInterval = 0.1f; // Time between each attack in seconds
     [Space(10)]
 
     [Header("Necesary variables")]
     public LayerMask EnemyLayer; // The layer where enemies are located
-    public int attackDamage = 10; // Damage for each attack
+    public float attackDamage = 10f; // Damage for each attack
     [Space(10)]
 
     [Header("Debug")]
@@ -41,8 +41,8 @@ public class Attack : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, attackRange, EnemyLayer);
         foreach (Collider2D hitEnemy in hitEnemies)
         {
-            hitEnemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
-            DamagePopup.CreatePopUp(hitEnemy.transform.position, attackDamage.ToString());
+            hitEnemy.GetComponent<EnemyHealth>().TakeDamage((int)attackDamage);
+            DamagePopup.CreatePopUp(hitEnemy.transform.position, ((int)attackDamage).ToString());
         }
         isAttacking = false;
     }
@@ -57,7 +57,7 @@ public class Attack : MonoBehaviour
     {
         if (isProjectile && collision.gameObject.CompareTag("Enemy"))
         {
-            collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
+            collision.gameObject.GetComponent<EnemyHealth>().TakeDamage((int)attackDamage);
         }
     }
 }
