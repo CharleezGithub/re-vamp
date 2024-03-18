@@ -28,23 +28,23 @@ public class Attack : MonoBehaviour
 
     public GameObject damagePopupPrefab; // Assign your TMP prefab in the inspector.
 
-    private void Update()
+    private void Start()
     {
-        if (!isAttacking && !isProjectile)
+        if (!isProjectile)
             StartCoroutine(AutoAttack());// Start the auto-attack repeating every 'attackInterval' seconds
     }
     IEnumerator AutoAttack()
     {
-        isAttacking = true;
-
-        yield return new WaitForSeconds(attackInterval);
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, attackRange, EnemyLayer);
-        foreach (Collider2D hitEnemy in hitEnemies)
+        while (true)
         {
-            hitEnemy.GetComponent<EnemyHealth>().TakeDamage((int)attackDamage);
-            DamagePopup.CreatePopUp(hitEnemy.transform.position, ((int)attackDamage).ToString());
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, attackRange, EnemyLayer);
+            foreach (Collider2D hitEnemy in hitEnemies)
+            {
+                hitEnemy.GetComponent<EnemyHealth>().TakeDamage((int)attackDamage);
+                DamagePopup.CreatePopUp(hitEnemy.transform.position, ((int)attackDamage).ToString());
+            }
+            yield return new WaitForSeconds(attackInterval);
         }
-        isAttacking = false;
     }
     // Method to call when damage is dealt.
     void OnDrawGizmosSelected()
