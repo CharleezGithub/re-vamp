@@ -7,7 +7,10 @@ using UnityEngine.UI;
 public class EnemyHealth : MonoBehaviour
 {
     public int maxHealth = 100;
-    public int currentHealth;    
+    public int currentHealth;
+
+    public AudioClip PlayOnDeath;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -17,6 +20,8 @@ public class EnemyHealth : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
+            if (PlayOnDeath != null)
+                AudioManager.PlaySound(PlayOnDeath, transform.position);
             Destroy(gameObject);
         }        
     }
