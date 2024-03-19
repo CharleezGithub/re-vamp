@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class Inventory : MonoBehaviour
 {
     [Tooltip("Reference to the empty GameObject holding the weaponFields")]
-    public GameObject weaponFields;
+    public GameObject[] weaponFields;
     [Tooltip("Reference to the empty GameObject holding the trinketFields")]
-    public GameObject trinketFields;
+    public GameObject[] trinketFields;
     [Tooltip("Reference to weapon script")]
     [SerializeField] private GameObject weaponRef;
     [Tooltip("Reference to trinket script")]
@@ -24,53 +24,20 @@ public class Inventory : MonoBehaviour
     [Tooltip("The background sprite for each field")]
     public Sprite fieldSprite;
 
-    private void Start()
-    {
-        InitializeFields();
-    }
-    private void InitializeFields()
-    {
-        Vector2 currentWeaponPosition = Vector2.zero; // Start position for weapon fields
-        Vector2 currentTrinketPosition = Vector2.zero; // Start position for trinket fields
-
-        Weapon weaponComponent = weaponRef.GetComponent<Weapon>();
-        if (weaponComponent != null)
-        {
-            foreach (var weaponData in weaponComponent.allWeaponData) // create a inventory field fo each weapon existing
-            {
-                CreateInventoryItem(null, true, weaponFields.transform, ref currentWeaponPosition, weaponOffset);
-            }
-        }
-
-        Trinket trinketComponent = trinketRef.GetComponent<Trinket>();
-        if (trinketComponent != null)
-        {
-            foreach (var trinketData in trinketComponent.allTrinketData) // create a inventory field fo each trinket existing
-            {
-                CreateInventoryItem(null, false, trinketFields.transform, ref currentTrinketPosition, trinketOffset);
-            }
-        }
-    }
     public void AddItem(Sprite itemSprite, bool isWeapon)
     {
-        Transform parentObject = isWeapon ? weaponFields.transform : trinketFields.transform;
-        bool itemAdded = false;
-
         // Iterate over each field to find the first one without an item sprite or to detect duplicates
-        for (int i = 0; i < parentObject.childCount; i++)
+        for (int i = 0; i < weaponFields.Length; i++)
         {
-            Transform fieldTransform = parentObject.GetChild(i);
+            Image itemImage = weaponFields[i].transform.GetChild(0).GetComponent<Image>();
 
-            Image itemImage = fieldTransform.GetChild(0).GetComponent<Image>();
-
-            if (itemImage != null && !itemAdded)
+            if (itemImage != null)
             {
                 if (itemImage.sprite == null || itemImage.sprite == fieldSprite)
                 {
                     // This field is empty, so we can add the item here
                     itemImage.sprite = itemSprite;
                     itemImage.rectTransform.sizeDelta = spriteFieldSize;
-                    itemAdded = true;
                     break; // Stop searching once we've added the item
                 }
                 else if (itemImage.sprite == itemSprite)
@@ -78,10 +45,6 @@ public class Inventory : MonoBehaviour
                     Debug.Log("Duplicate item detected."); // TODO: handle duplicates
                     break;
                 }
-            }
-            else if (itemImage == null)
-            {
-
             }
         }
     }
