@@ -283,7 +283,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6340240415801742025
 RectTransform:
   m_ObjectHideFlags: 0
@@ -479,19 +479,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6236608838556431110}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8021553260626320203}
-        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
-        m_MethodName: SelectionHandler
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 101547300708486336}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &2224994861225893006
 GameObject:
   m_ObjectHideFlags: 0
@@ -1398,6 +1386,7 @@ GameObject:
   - component: {fileID: 8686820780664016737}
   - component: {fileID: 2129602948555044931}
   - component: {fileID: 1649261572915740767}
+  - component: {fileID: 4754385985415687213}
   m_Layer: 7
   m_Name: PlayerDebugging
   m_TagString: Player
@@ -1682,6 +1671,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 2602517882505197289}
+--- !u!114 &4754385985415687213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3977218777653717955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 448142a52b3482642ae8579ca11a60e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShopUIObject: {fileID: 556786004114390300}
+  ShopButtons:
+  - {fileID: 4166458222229957846}
+  - {fileID: 1586563077933048244}
+  - {fileID: 8987621486545297944}
+  - {fileID: 8870610866447788557}
+  allShopItemsCollection: {fileID: 11400000, guid: 095f13ac298272e42bc95985f804d802, type: 2}
 --- !u!1 &4166458222229957846
 GameObject:
   m_ObjectHideFlags: 0
@@ -1803,19 +1811,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3833378852078766271}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8021553260626320203}
-        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
-        m_MethodName: SelectionHandler
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 5028266194808675838}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &4216570422590786932
 GameObject:
   m_ObjectHideFlags: 0
@@ -2016,8 +2012,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c133b45d8398024084788eec99d29b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponFields: {fileID: 0}
-  trinketFields: {fileID: 0}
+  weaponFields:
+  - {fileID: 0}
+  trinketFields:
+  - {fileID: 0}
   weaponRef: {fileID: 1559225122894916435}
   trinketRef: {fileID: 2946356819438270801}
   fieldSize: {x: 100, y: 100}
@@ -2578,7 +2576,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7190415844920931152}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2cd651354ec63ad43b1d131882faca1d, type: 3}
   m_Name: 
@@ -3214,19 +3212,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2266965232105706815}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8021553260626320203}
-        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
-        m_MethodName: SelectionHandler
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 3372775202367950648}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &8873913002379260930
 GameObject:
   m_ObjectHideFlags: 0
@@ -3423,16 +3409,4 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2053310156504051186}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8021553260626320203}
-        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
-        m_MethodName: SelectionHandler
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1799013984318573986}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []

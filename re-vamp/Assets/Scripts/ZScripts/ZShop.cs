@@ -5,6 +5,7 @@ using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class ZShop : MonoBehaviour
 {
@@ -17,7 +18,8 @@ public class ZShop : MonoBehaviour
 
     public DataCollection allShopItemsCollection;
 
-    private List<ZShopItem> items = new List<ZShopItem>();
+    private ZShopItem[] items;
+    private List<int> showingItemIds = new List<int>(); // Used to store the index of which item is being displayed
 
     private void OnEnable()
     {
@@ -31,8 +33,28 @@ public class ZShop : MonoBehaviour
             Instance = this;
         }
 
-        allShopItemsCollection.trinkets.ForEach((item) => items.Add(new ZShopItem() { TrinketOrWeapon = item, SharedProperties = item}));
-        allShopItemsCollection.weapons.ForEach((item) => items.Add(new ZShopItem() { TrinketOrWeapon = item, SharedProperties = item }));
+        items = allShopItemsCollection.trinkets.Cast<IZShopItem>().Concat(allShopItemsCollection.weapons.Cast<IZShopItem>()).Select(x=>new ZShopItem() { TrinketOrWeapon = (ScriptableObject)x, SharedProperties = x}).ToArray();
+        for (int i = 0; i < items.Length; i++)
+        {
+            items[i].id = i;
+        }
+
+        // Init buttons
+        for (int i = 0; i < ShopButtons.Length; i++)
+        {
+            int buttonIndexCapture = i;
+
+            Button btn = ShopButtons[i].GetComponent<Button>();
+            btn.onClick.AddListener(() => BuyItem(buttonIndexCapture));
+        }
+
+        OnItemBought += OnBuyTestMethod;
+    }
+
+    private void OnBuyTestMethod(ZShopItem obj)
+    {
+        // Kim. Look at here
+        print($"Bought: " + obj.SharedProperties.GetName());
     }
 
     private void Awake()
@@ -69,25 +91,58 @@ public class ZShop : MonoBehaviour
 
     public void RefreshShop()
     {
+        showingItemIds.Clear();
+
         List<ZShopItem> notBoughtItems = items.Where(x => !x.HasBought).ToList();
         for (int i = 0; i < math.min(ShopButtons.Length, notBoughtItems.Count); i++)
         {
-            // Get random item and remove from list
-            ZShopItem randomItem = notBoughtItems[UnityEngine.Random.Range(0, notBoughtItems.Count)];
-            notBoughtItems.Remove(randomItem); // only show once
+            // Getting close to pyramid of doom. This should not be an if statement
+            if (notBoughtItems.Count > 0)
+            {
+                // Get random item and remove from list
+                int randomIndex = UnityEngine.Random.Range(0, notBoughtItems.Count);
+                ZShopItem randomItem = notBoughtItems[randomIndex];
+                notBoughtItems.Remove(randomItem); // only show once
 
-            // Get sprite and image renderer
-            Sprite buttonSprite = randomItem.SharedProperties.GetSprite();
-            Image imageRenderer = ShopButtons[i].transform.GetChild(0).GetComponent<Image>();
+                // Get sprite and image renderer
+                Sprite buttonSprite = randomItem.SharedProperties.GetSprite();
+                Image imageRenderer = ShopButtons[i].transform.GetChild(0).GetComponent<Image>();
 
-            // Replace the sprite in the renderer
-            imageRenderer.sprite = buttonSprite;
+                // Replace the sprite in the renderer
+                imageRenderer.sprite = buttonSprite;
+
+                // Store this item as showing
+                showingItemIds.Add(randomItem.id);
+            }
+            else
+            {
+                // Get sprite and image renderer
+                Image imageRenderer = ShopButtons[i].transform.GetChild(0).GetComponent<Image>();
+
+                // Replace the sprite in the renderer
+                imageRenderer.sprite = null;
+            }
         }
+    }
+
+    public void BuyItem(int buttonIndex)
+    {
+        if (buttonIndex > showingItemIds.Count) return; // Stops if button clicked is out of range
+
+        // Grab item from array
+        ZShopItem boughtItem = items[showingItemIds[buttonIndex]];
+
+        boughtItem.HasBought = true; // Buy the item (Disgusting code but it works)
+        SetShopState(ShopState.Inactive);
+
+        OnItemBought?.Invoke(boughtItem);
+        items[showingItemIds[buttonIndex]] = boughtItem; // Re-inject back to array
     }
 }
 
 public struct ZShopItem
 {
+    public int id;
     public bool HasBought;
     public ScriptableObject TrinketOrWeapon;
     public IZShopItem SharedProperties;
@@ -96,6 +151,7 @@ public struct ZShopItem
 public interface IZShopItem
 {
     public Sprite GetSprite();
+    public string GetName();
 }
 
 public enum ShopState

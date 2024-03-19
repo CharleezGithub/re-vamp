@@ -13,5 +13,6 @@ public class WeaponData : ScriptableObject, IZShopItem
     public GameObject weaponPrefab;
 
     public Sprite GetSprite() => weaponPrefab.GetComponent<SpriteRenderer>().sprite;
+    public string GetName() => weaponName;
 }
 

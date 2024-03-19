@@ -21,4 +21,5 @@ public class TrinketData : ScriptableObject, IZShopItem
     public GameObject trinketPrefab;
 
     public Sprite GetSprite() => trinketPrefab.GetComponent<SpriteRenderer>().sprite;
+    public string GetName() => trinketName;
 }
