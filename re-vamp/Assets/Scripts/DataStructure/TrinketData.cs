@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Data/TrinketData")]
-public class TrinketData : ScriptableObject
+public class TrinketData : ScriptableObject, IZShopItem
 {
     public string trinketName;
     public string description;
@@ -19,4 +19,6 @@ public class TrinketData : ScriptableObject
     public float levelMultiplier;
     public float FOV;
     public GameObject trinketPrefab;
+
+    public Sprite GetSprite() => trinketPrefab.GetComponent<SpriteRenderer>().sprite;
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Data/WeaponData")]
-public class WeaponData : ScriptableObject
+public class WeaponData : ScriptableObject, IZShopItem
 {
     public string weaponName;
     public string description;
@@ -11,5 +11,7 @@ public class WeaponData : ScriptableObject
     public int level;
     public float levelMultiplier;
     public GameObject weaponPrefab;
+
+    public Sprite GetSprite() => weaponPrefab.GetComponent<SpriteRenderer>().sprite;
 }
 
