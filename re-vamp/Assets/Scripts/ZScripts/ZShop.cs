@@ -49,7 +49,7 @@ public class ZShop : MonoBehaviour
         }
     }
 
-    public void SetShopState(ShopState state = ShopState.Toggle)
+    public void SetShopState(ShopState state)
     {
         switch (state)
         {
