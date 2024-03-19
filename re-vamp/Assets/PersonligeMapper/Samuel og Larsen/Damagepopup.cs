@@ -16,12 +16,10 @@ public class DamagePopup : MonoBehaviour
     }
     public static void CreatePopUp(Vector3 position, string text) // Correct method name
     {
-        return; // This below causes errors. I do not like it
-
-            var popup = Instantiate(current.prefab, position, Quaternion.identity);
-            var tmp = popup.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-            tmp.text = text;
-            Destroy(popup, 1f);
+        var popup = Instantiate(current.prefab, position, Quaternion.identity);
+        var tmp = popup.transform.GetComponent<TextMeshProUGUI>();
+        tmp.text = text;
+        Destroy(popup, 1f);
     }
 
 }
