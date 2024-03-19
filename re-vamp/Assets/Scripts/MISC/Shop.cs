@@ -9,7 +9,7 @@ using System.Collections;
 public class Shop : MonoBehaviour
 {
     public TextMeshProUGUI[] textSlots;
-    public GameObject[] slotContent;
+    public Sprite[] slotContent;
     public GameObject[] slots;
 
     public Weapon weapon;
@@ -21,7 +21,7 @@ public class Shop : MonoBehaviour
     public Inventory inventory;
 
     int[] itemIndex;
-    int selectedIndex;
+    int selectedField;
     Sprite[] sprites;
 
     private void Update()
@@ -51,7 +51,7 @@ public class Shop : MonoBehaviour
         var items = new Item[weaponCount + trinketCount];
         itemIndex = new int[slotCount + 1];
         itemIndex[0] = GetRandomIntInRange(weaponCount);
-        slotContent[0] = weapon.allWeaponData[itemIndex[0]].weaponPrefab;
+        slotContent[0] = weapon.allWeaponData[itemIndex[0]].weaponPrefab.GetComponent<SpriteRenderer>().sprite;
         textSlots[0].text = weapon.allWeaponData[itemIndex[0]].weaponName;
 
         for (int i = 1; i <= slotCount; i++)
@@ -79,7 +79,7 @@ public class Shop : MonoBehaviour
                     j--;
                 }
             }
-            slotContent[i] = trinket.allTrinketData[itemIndex[i]].trinketPrefab;
+            slotContent[i] = trinket.allTrinketData[itemIndex[i]].trinketPrefab.GetComponent<SpriteRenderer>().sprite;
             textSlots[i].text = trinket.allTrinketData[itemIndex[i]].trinketName;
         }
         else
@@ -93,7 +93,7 @@ public class Shop : MonoBehaviour
                     j--;
                 }
             }
-            slotContent[i] = weapon.allWeaponData[itemIndex[i]].weaponPrefab;
+            slotContent[i] = weapon.allWeaponData[itemIndex[i]].weaponPrefab.GetComponent<SpriteRenderer>().sprite;
             textSlots[i].text = weapon.allWeaponData[itemIndex[i]].weaponName;
         }
     }
@@ -110,7 +110,7 @@ public class Shop : MonoBehaviour
                     j--;
                 }
             }
-            slotContent[i] = weapon.allWeaponData[itemIndex[i]].weaponPrefab;
+            slotContent[i] = weapon.allWeaponData[itemIndex[i]].weaponPrefab.GetComponent<SpriteRenderer>().sprite;
             textSlots[i].text = weapon.allWeaponData[itemIndex[i]].weaponName;
         }
         else
@@ -124,26 +124,26 @@ public class Shop : MonoBehaviour
                     j--;
                 }
             }
-            slotContent[i] = trinket.allTrinketData[itemIndex[i]].trinketPrefab;
+            slotContent[i] = trinket.allTrinketData[itemIndex[i]].trinketPrefab.GetComponent<SpriteRenderer>().sprite;
             textSlots[i].text = trinket.allTrinketData[itemIndex[i]].trinketName;
         }
     }
     public void SelectionHandler(Button button)
     {
         string index = button.name;
-        selectedIndex = int.Parse(index);
+        selectedField = int.Parse(index);
     }
     public void ConfirmSelections()
     {
-        if (itemIndex[selectedIndex] < weapon.allWeaponData.Count &&
-            slotContent[selectedIndex] == weapon.allWeaponData[itemIndex[selectedIndex]].weaponPrefab)
+        if (itemIndex[selectedField] < weapon.allWeaponData.Count &&
+            slotContent[selectedField] == weapon.allWeaponData[itemIndex[selectedField]].weaponPrefab)
         {
-            inventory.AddItem(weapon.allWeaponData[itemIndex[selectedIndex]].weaponPrefab.GetComponent<SpriteRenderer>().sprite, true);
+            inventory.AddItem(weapon.allWeaponData[itemIndex[selectedField]].weaponPrefab.GetComponent<SpriteRenderer>().sprite, true);
         }
-        else if (itemIndex[selectedIndex] < trinket.allTrinketData.Count &&
-                 slotContent[selectedIndex] == trinket.allTrinketData[itemIndex[selectedIndex]].trinketPrefab)
+        else if (itemIndex[selectedField] < trinket.allTrinketData.Count &&
+                 slotContent[selectedField] == trinket.allTrinketData[itemIndex[selectedField]].trinketPrefab)
         {
-            inventory.AddItem(trinket.allTrinketData[itemIndex[selectedIndex]].trinketPrefab.GetComponent<SpriteRenderer>().sprite, false);
+            inventory.AddItem(trinket.allTrinketData[itemIndex[selectedField]].trinketPrefab.GetComponent<SpriteRenderer>().sprite, false);
         }
         shop.SetActive(false);
     }
