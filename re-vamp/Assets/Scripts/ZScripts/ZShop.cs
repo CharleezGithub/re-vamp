@@ -45,7 +45,7 @@ public class ZShop : MonoBehaviour
         // TODO: remove this (use only for debugging)
         if (Input.GetKeyDown(KeyCode.F))
         {
-            SetShopState();
+            SetShopState(ShopState.Toggle);
         }
     }
 
