@@ -211,7 +211,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 758171329}
-  - component: {fileID: 758171328}
+  - component: {fileID: 758171330}
   m_Layer: 0
   m_Name: DamagePopUpGen
   m_TagString: Untagged
@@ -219,19 +219,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &758171328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758171327}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c0002d648ebcca4c9d055ac8b41fe28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 2752183428631856124, guid: 1e14c790730153449abad3d5b259d8ed, type: 3}
 --- !u!4 &758171329
 Transform:
   m_ObjectHideFlags: 0
@@ -247,6 +234,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &758171330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758171327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c0002d648ebcca4c9d055ac8b41fe28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 2752183428631856124, guid: 1e14c790730153449abad3d5b259d8ed, type: 3}
 --- !u!114 &1190551369 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2937292952063099603, guid: 2affb2869b68eb246a1935ed187742d6, type: 3}
@@ -266,6 +266,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4316335013159113176, guid: 2affb2869b68eb246a1935ed187742d6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2785097331024130245, guid: 2affb2869b68eb246a1935ed187742d6, type: 3}
       propertyPath: health
       value: 
@@ -328,7 +332,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5670154961778921473, guid: 2affb2869b68eb246a1935ed187742d6, type: 3}
       propertyPath: attackInterval
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8021553260626320203, guid: 2affb2869b68eb246a1935ed187742d6, type: 3}
       propertyPath: weapon

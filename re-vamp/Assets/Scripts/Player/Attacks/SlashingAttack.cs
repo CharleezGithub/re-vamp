@@ -16,7 +16,6 @@ public class SlashingAttack : MonoBehaviour
         if (!isAttacking)
             StartCoroutine(SlashAttack());
     }
-
     private IEnumerator SlashAttack()
     {
         isAttacking = true;
@@ -24,7 +23,6 @@ public class SlashingAttack : MonoBehaviour
         FireProjectile();
         isAttacking = false;
     }
-
     void FireProjectile()
     {
         // Instantiate the projectile
@@ -42,7 +40,6 @@ public class SlashingAttack : MonoBehaviour
         // Destroy the projectile after its lifetime
         Destroy(projectile, projectileLifetime);
     }
-
     IEnumerator MoveProjectile(GameObject projectile, Vector2 direction)
     {
         while (projectile != null)

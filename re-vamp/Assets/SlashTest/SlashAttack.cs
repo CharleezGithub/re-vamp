@@ -40,7 +40,7 @@ public class SlashAttack : MonoBehaviour
         {
             Vector2 directionToEnemy = enemy.transform.position - transform.position;
             float angle = Vector2.Angle(attackDirection, directionToEnemy);
-
+            Debug.Log(enemy.name);
             if (angle <= attackAngle / 2) // Enemy is within the slash angle
             {
                 enemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);

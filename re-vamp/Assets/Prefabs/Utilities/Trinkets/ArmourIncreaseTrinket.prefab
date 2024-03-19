@@ -65,6 +65,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 302765368e4e3274c8b811fd9370b626, type: 3}
     - target: {fileID: 6803346413424314539, guid: 26fac5ffc70738c4db98b1ff9a5f2245, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6803346413424314539, guid: 26fac5ffc70738c4db98b1ff9a5f2245, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
@@ -94,3 +98,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 3977218777653717955, guid: 2affb2869b68eb246a1935ed187742d6, type: 3}
+  armorBoostAmount: 20
