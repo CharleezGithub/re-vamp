@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77c198c2232a035468a0814b43c9825c, type: 3}
-  m_Name: TrinketData 2
+  m_Name: Monocle
   m_EditorClassIdentifier: 
-  trinketName: Increase Damage
+  trinketName: Monocle
   description: 
   level: 0
   maxHealthIncrease: 0
@@ -23,5 +23,5 @@ MonoBehaviour:
   projectileSpeedIncrease: 0
   movementSpeedIncrease: 0
   viewDistanceIncrease: 0
-  levelMultiplier: 0
-  trinketPrefab: {fileID: 8427938882397602699, guid: 69f8419eb620e3e41867b3ebdf92ffe9, type: 3}
+  levelMultiplier: 1.2
+  trinketPrefab: {fileID: 0}
