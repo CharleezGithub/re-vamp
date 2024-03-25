@@ -40,7 +40,10 @@ public class ZShop : MonoBehaviour
         for (int i = 0; i < items.Length; i++)
         {
             items[i].id = i;
+            items[i].name = items[i].SharedProperties.GetName();
         }
+
+        Debug.Log("[Shop] Loaded: " + items.Select(x=>x.name).Aggregate((x, y) => x + ", " + y));
 
         // Init buttons
         for (int i = 0; i < ShopButtons.Length; i++)
@@ -146,6 +149,7 @@ public class ZShop : MonoBehaviour
 public struct ZShopItem
 {
     public int id;
+    public string name;
     public bool HasBought;
     public ScriptableObject TrinketOrWeapon;
     public IZShopItem SharedProperties;
