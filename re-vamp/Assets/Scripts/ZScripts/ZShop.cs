@@ -13,6 +13,9 @@ public class ZShop : MonoBehaviour
 
     public static event Action<ZShopItem> OnItemBought;
 
+    public static ZShopItem[] ItemsBought => Instance.items.Where(x => x.HasBought).ToArray();
+    public static ZShopItem[] NotItemsBought => Instance.items.Where(x => !x.HasBought).ToArray();
+
     public GameObject ShopUIObject;
     public GameObject[] ShopButtons;
 
