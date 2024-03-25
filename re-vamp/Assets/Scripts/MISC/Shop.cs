@@ -138,12 +138,12 @@ public class Shop : MonoBehaviour
         if (itemIndex[selectedField] < weapon.allWeaponData.Count &&
             slotContent[selectedField] == weapon.allWeaponData[itemIndex[selectedField]].weaponPrefab)
         {
-            inventory.AddItem(weapon.allWeaponData[itemIndex[selectedField]].weaponPrefab.GetComponent<SpriteRenderer>().sprite, true);
+            //inventory.AddItem(weapon.allWeaponData[itemIndex[selectedField]].weaponPrefab.GetComponent<SpriteRenderer>().sprite, true);
         }
         else if (itemIndex[selectedField] < trinket.allTrinketData.Count &&
                  slotContent[selectedField] == trinket.allTrinketData[itemIndex[selectedField]].trinketPrefab)
         {
-            inventory.AddItem(trinket.allTrinketData[itemIndex[selectedField]].trinketPrefab.GetComponent<SpriteRenderer>().sprite, false);
+            //inventory.AddItem(trinket.allTrinketData[itemIndex[selectedField]].trinketPrefab.GetComponent<SpriteRenderer>().sprite, false);
         }
         shop.SetActive(false);
     }

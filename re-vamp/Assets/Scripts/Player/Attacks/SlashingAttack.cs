@@ -11,11 +11,35 @@ public class SlashingAttack : MonoBehaviour
     Vector2 direction;
     bool isAttacking = false;
 
+    Transform playerTransform;
+
+    private void Start()
+    {
+        GetComponent<SpriteRenderer>().enabled = false;
+
+        StartCoroutine(GetTopParent());
+    }
+
     private void Update()
     {
         if (!isAttacking)
             StartCoroutine(SlashAttack());
     }
+
+    private IEnumerator GetTopParent()
+    {
+        Transform currentParent = transform.parent;
+
+        // Keep going up the hierarchy until there's no parent left
+        while (currentParent.parent != null)
+        {
+            currentParent = currentParent.parent;
+        }
+
+        playerTransform = currentParent;
+        yield return null;
+    }
+
     private IEnumerator SlashAttack()
     {
         isAttacking = true;
@@ -26,7 +50,7 @@ public class SlashingAttack : MonoBehaviour
     void FireProjectile()
     {
         // Instantiate the projectile
-        GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+        GameObject projectile = Instantiate(projectilePrefab, playerTransform.position, Quaternion.identity);
 
         // Calculate the direction based on player input
         if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)

@@ -173,6 +173,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecbf982688be7b74d9d06f28ca5ed58b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &233396816 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2937292952063099603, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
+  m_PrefabInstance: {fileID: 8180645182630037764}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67c8e10d0206d38489303de0dd7e3963, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &233396817 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5670154961778921473, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
+  m_PrefabInstance: {fileID: 8180645182630037764}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0194c45efb6d5714b89dd46c1ebebb38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &248535417 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5624437054475254407, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
+  m_PrefabInstance: {fileID: 8180645182630037764}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &286399661 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1470875648818866641, guid: e4d94f8a95d4acc458772a131b2c87c2, type: 3}
@@ -900,6 +927,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 550447664}
     m_Modifications:
+    - target: {fileID: -2506018100150996513, guid: 69f8419eb620e3e41867b3ebdf92ffe9, type: 3}
+      propertyPath: attack_script
+      value: 
+      objectReference: {fileID: 233396817}
     - target: {fileID: 8427938882397602699, guid: 69f8419eb620e3e41867b3ebdf92ffe9, type: 3}
       propertyPath: m_Name
       value: DamageIncreaseTrinket
@@ -1434,6 +1465,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e84cf9ae2f11cde4daf7b3a68f6bb9a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1021746781 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6839025830973004929, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
+  m_PrefabInstance: {fileID: 8180645182630037764}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1047100355 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3510709336834906690, guid: e4d94f8a95d4acc458772a131b2c87c2, type: 3}
@@ -1626,6 +1662,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 550447664}
     m_Modifications:
+    - target: {fileID: 5004826262073041188, guid: 352ca14c865a0e24c81dafb72eb127ba, type: 3}
+      propertyPath: health_script
+      value: 
+      objectReference: {fileID: 233396816}
     - target: {fileID: 8427938882397602699, guid: 352ca14c865a0e24c81dafb72eb127ba, type: 3}
       propertyPath: m_Name
       value: HeartIncreaseTrinket
@@ -3143,7 +3183,8 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8021553260626320203, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
     m_RemovedGameObjects:
     - {fileID: 5853903429574151412, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
     - {fileID: 9201173502805327232, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
@@ -3219,8 +3260,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2363dfe09b23dc047b124adfcdb5f2d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trinkets: {fileID: 0}
-  weapons: {fileID: 0}
+  trinkets: {fileID: 1021746781}
+  weapons: {fileID: 248535417}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
