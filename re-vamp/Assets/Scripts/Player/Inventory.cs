@@ -5,60 +5,59 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-    [Tooltip("Reference to the empty GameObject holding the weaponFields")]
+    [Tooltip("The inventory slots holding the weapons")]
     public GameObject[] weaponFields;
-    [Tooltip("Reference to the empty GameObject holding the trinketFields")]
+
+    [Tooltip("The inventory slots holding the trinkets")]
     public GameObject[] trinketFields;
+
     [Tooltip("Reference to weapon script")]
     [SerializeField] private GameObject weaponRef;
+
     [Tooltip("Reference to trinket script")]
     [SerializeField] private GameObject trinketRef;
+
     [Tooltip("x and y size of the fields")]
     public Vector2 fieldSize = new Vector2(100, 100);
+
     [Tooltip("x and y size of the sprites inside the inventory slot")]
     public Vector2 spriteFieldSize = new Vector2(80, 80);
+
     [Tooltip("Offset between weapon fields")]
     public Vector2 weaponOffset = new Vector2(110, 0);
+
     [Tooltip("Offset between trinket fields")]
     public Vector2 trinketOffset = new Vector2(0, -110);
+
     [Tooltip("The background sprite for each field")]
     public Sprite fieldSprite;
 
-    public void AddItem(Sprite itemSprite, bool isWeapon)
+    private void Start()
     {
-        // Iterate over each field to find the first one without an item sprite or to detect duplicates
-        for (int i = 0; i < weaponFields.Length; i++)
-        {
-            Image itemImage = weaponFields[i].transform.GetChild(0).GetComponent<Image>();
+        ZShop.OnItemBought += AddItem;
+    }
 
-            if (itemImage != null)
+    private void AddItem(ZShopItem item)
+    {
+        if (item.TrinketOrWeapon)
+        {
+            for (int i = 0; i < trinketFields.Length; i++)
             {
-                if (itemImage.sprite == null || itemImage.sprite == fieldSprite)
+                if (trinketFields[i].GetComponentInChildren<Image>().sprite == null)
                 {
-                    // This field is empty, so we can add the item here
-                    itemImage.sprite = itemSprite;
-                    itemImage.rectTransform.sizeDelta = spriteFieldSize;
-                    break; // Stop searching once we've added the item
-                }
-                else if (itemImage.sprite == itemSprite)
-                {
-                    Debug.Log("Duplicate item detected."); // TODO: handle duplicates
-                    break;
+                    //trinketFields[i].GetComponentInChildren<Image>().sprite = item
                 }
             }
         }
-    }
+        else if (!item.TrinketOrWeapon)
+        {
+            for (int i = 0; i < weaponFields.Length; i++)
+            {
+                if (weaponFields[i].GetComponentInChildren<Image>().sprite == null)
+                {
 
-    void CreateInventoryItem(Sprite itemSprite, bool isWeapon, Transform parentObject, ref Vector2 currentPosition, Vector2 offset)
-    {        
-        GameObject fieldGO = new GameObject(isWeapon ? "WeaponField" : "TrinketField", typeof(Image));
-        fieldGO.transform.SetParent(parentObject, false);
-        fieldGO.GetComponent<Image>().sprite = fieldSprite;
-
-        RectTransform fieldRect = fieldGO.GetComponent<RectTransform>();
-        fieldRect.sizeDelta = fieldSize;
-        fieldRect.anchoredPosition = currentPosition;
-
-        currentPosition += offset;
+                }
+            }
+        }
     }
 }
