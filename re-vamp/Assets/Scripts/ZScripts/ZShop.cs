@@ -13,8 +13,8 @@ public class ZShop : MonoBehaviour
 
     public static event Action<ZShopItem> OnItemBought;
 
-    public static ZShopItem[] ItemsBought => Instance.items.Where(x => x.HasBought).ToArray();
-    public static ZShopItem[] NotItemsBought => Instance.items.Where(x => !x.HasBought).ToArray();
+    public static ZShopItem[] ItemsBought => Instance.items.Where(x => x.boughtTimes > 0).ToArray();
+    public static ZShopItem[] NotItemsBought => Instance.items.Where(x => x.boughtTimes == 0).ToArray();
 
     public GameObject ShopUIObject;
     public GameObject[] ShopButtons;
@@ -36,7 +36,7 @@ public class ZShop : MonoBehaviour
             Instance = this;
         }
 
-        items = allShopItemsCollection.trinkets.Cast<IZShopItem>().Concat(allShopItemsCollection.weapons.Cast<IZShopItem>()).Select(x=>new ZShopItem() { TrinketOrWeapon = (ScriptableObject)x, SharedProperties = x}).ToArray();
+        items = allShopItemsCollection.trinkets.Cast<IZShopItem>().Concat(allShopItemsCollection.weapons.Cast<IZShopItem>()).Select(x=>new ZShopItem() { TrinketOrWeapon = (ZItemSO)x, SharedProperties = x}).ToArray();
         for (int i = 0; i < items.Length; i++)
         {
             items[i].id = i;
@@ -109,7 +109,7 @@ public class ZShop : MonoBehaviour
             imageRenderer.sprite = null;
         }
 
-        List<ZShopItem> notBoughtItems = items.Where(x => !x.HasBought).ToList();
+        List<ZShopItem> notBoughtItems = items.Where(x => x.boughtTimes < x.maxBuyTimes).ToList();
         for (int i = 0; i < math.min(ShopButtons.Length, notBoughtItems.Count); i++)
         {
             // Getting close to pyramid of doom. This should not be an if statement
@@ -145,7 +145,7 @@ public class ZShop : MonoBehaviour
         int itemIndex = showingItemIds[buttonIndex];
         ZShopItem boughtItem = items[itemIndex];
 
-        boughtItem.HasBought = true; // Buy the item (Disgusting code but it works)
+        boughtItem.boughtTimes++; // Buy the item
         SetShopState(ShopState.Inactive);
 
         OnItemBought?.Invoke(boughtItem);
@@ -156,8 +156,9 @@ public class ZShopItem
 {
     public int id;
     public string name;
-    public bool HasBought;
-    public ScriptableObject TrinketOrWeapon;
+    public uint boughtTimes = 0;
+    public uint maxBuyTimes => TrinketOrWeapon.maxBuyTimes;
+    public ZItemSO TrinketOrWeapon;
     public IZShopItem SharedProperties;
 }
 
@@ -179,4 +180,10 @@ public enum ShopState
     Active,
     Inactive,
     Toggle
+}
+
+public abstract class ZItemSO : ScriptableObject
+{
+    public uint maxBuyTimes = 1;
+    public uint level => maxBuyTimes; // For the haters wanting to say level.
 }

@@ -5,12 +5,11 @@ using UnityEngine;
 using UnityEngine.Assertions;
 
 [CreateAssetMenu(menuName = "Data/WeaponData")]
-public class WeaponData : ScriptableObject, IZShopItem
+public class WeaponData : ZItemSO, IZShopItem
 {
     public string weaponName;
     public string description;
     public int damage;
-    public int level;
     public float levelMultiplier;
     public GameObject weaponPrefab;
 
