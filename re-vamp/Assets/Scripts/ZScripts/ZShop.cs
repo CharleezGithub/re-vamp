@@ -136,7 +136,8 @@ public class ZShop : MonoBehaviour
         if (buttonIndex > showingItemIds.Count) return; // Stops if button clicked is out of range
 
         // Grab item from array
-        ZShopItem boughtItem = items[showingItemIds[buttonIndex]];
+        int itemIndex = showingItemIds[buttonIndex];
+        ZShopItem boughtItem = items[itemIndex];
 
         boughtItem.HasBought = true; // Buy the item (Disgusting code but it works)
         SetShopState(ShopState.Inactive);
@@ -159,6 +160,13 @@ public interface IZShopItem
 {
     public Sprite GetSprite();
     public string GetName();
+    public ItemType GetItemType();
+}
+
+public enum ItemType
+{
+    Trinket,
+    Weapon
 }
 
 public enum ShopState

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 [CreateAssetMenu(menuName = "Data/TrinketData")]
 public class TrinketData : ScriptableObject, IZShopItem
@@ -20,6 +22,16 @@ public class TrinketData : ScriptableObject, IZShopItem
     public float FOV;
     public GameObject trinketPrefab;
 
-    public Sprite GetSprite() => trinketPrefab.GetComponent<SpriteRenderer>().sprite;
+    public Sprite GetSprite()
+    {
+        if (trinketPrefab == null)
+        {
+            string path = AssetDatabase.GetAssetPath(this);
+            Debug.LogError("Prefab not assigned! At: "+ path);
+        }
+        return trinketPrefab.GetComponent<SpriteRenderer>().sprite;
+    }
+
     public string GetName() => trinketName;
+    public ItemType GetItemType() => ItemType.Trinket;
 }
