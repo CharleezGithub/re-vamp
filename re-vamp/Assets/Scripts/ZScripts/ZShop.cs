@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 using UnityEngine.UI;
 using static UnityEditor.Progress;
 
@@ -60,7 +61,9 @@ public class ZShop : MonoBehaviour
     private void OnBuyTestMethod(ZShopItem obj)
     {
         // Kim. Look at here
-        print("Bought: " + obj.SharedProperties.GetName() + "\nItemType: " + obj.SharedProperties.GetItemType());
+        print("Bought: " + obj.SharedProperties.GetName() 
+            + "\nItemType: " + obj.SharedProperties.GetItemType()
+            + "\nItem bought times: " + obj.level); // Also works with: obj.boughtTimes
     }
 
     private void Awake()
@@ -158,6 +161,7 @@ public class ZShopItem
     public string name;
     public uint boughtTimes = 0;
     public uint maxBuyTimes => TrinketOrWeapon.maxBuyTimes;
+    public uint level => boughtTimes; // For the haters
     public ZItemSO TrinketOrWeapon;
     public IZShopItem SharedProperties;
 }
