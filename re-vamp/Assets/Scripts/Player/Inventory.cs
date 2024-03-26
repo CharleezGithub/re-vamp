@@ -6,58 +6,75 @@ using UnityEngine.UI;
 public class Inventory : MonoBehaviour
 {
     [Tooltip("The inventory slots holding the weapons")]
-    public GameObject[] weaponFields;
+    public Image[] weaponFields;
 
     [Tooltip("The inventory slots holding the trinkets")]
-    public GameObject[] trinketFields;
-
-    [Tooltip("Reference to weapon script")]
-    [SerializeField] private GameObject weaponRef;
-
-    [Tooltip("Reference to trinket script")]
-    [SerializeField] private GameObject trinketRef;
-
-    [Tooltip("x and y size of the fields")]
-    public Vector2 fieldSize = new Vector2(100, 100);
-
-    [Tooltip("x and y size of the sprites inside the inventory slot")]
-    public Vector2 spriteFieldSize = new Vector2(80, 80);
-
-    [Tooltip("Offset between weapon fields")]
-    public Vector2 weaponOffset = new Vector2(110, 0);
-
-    [Tooltip("Offset between trinket fields")]
-    public Vector2 trinketOffset = new Vector2(0, -110);
-
-    [Tooltip("The background sprite for each field")]
-    public Sprite fieldSprite;
+    public Image[] trinketFields;
 
     private void Start()
     {
+        LevelUpItem();
         ZShop.OnItemBought += AddItem;
     }
 
-    private void AddItem(ZShopItem item)
+    private void AddItem(ZShopItem z)
     {
-        if (item.TrinketOrWeapon)
-        {
-            for (int i = 0; i < trinketFields.Length; i++)
-            {
-                if (trinketFields[i].GetComponentInChildren<Image>().sprite == null)
-                {
-                    //trinketFields[i].GetComponentInChildren<Image>().sprite = item
-                }
-            }
-        }
-        else if (!item.TrinketOrWeapon)
-        {
-            for (int i = 0; i < weaponFields.Length; i++)
-            {
-                if (weaponFields[i].GetComponentInChildren<Image>().sprite == null)
-                {
+        Debug.Log("Adding item...");
 
-                }
+        ZShopItem[] itemsBought = ZShop.ItemsBought;
+
+        for (int i = 0; i < itemsBought.Length; i++) // Cycles through the bought items
+        {
+            if (i >= 1 && itemsBought[i - 1].id == itemsBought[i].id)
+            {
+                LevelUpItem();
+                break;
+            }
+
+            if (itemsBought[i].SharedProperties.GetItemType() == ItemType.Weapon) // if its a weapon send the weapon sprite to AddWeapon();
+            {
+                AddWeapon(itemsBought[i].SharedProperties.GetSprite());
+                break;
+            }
+
+            else if (itemsBought[i].SharedProperties.GetItemType() == ItemType.Trinket) // if its a trinket send the trinket sprite to AddTrinket();
+            {
+                AddTrinket(itemsBought[i].SharedProperties.GetSprite());
+                break;
             }
         }
+    }
+
+    private void AddWeapon(Sprite weapon)
+    {
+        Debug.Log("Adding weapon...");
+
+        for (int i = 0; i < weaponFields.Length; i++) // cycles throught the weapon fields
+        {
+            if (weaponFields[i].sprite == null) // if a field is empty add the item
+            {
+                weaponFields[i].sprite = weapon;
+                break;
+            }
+        }
+    }
+
+    private void AddTrinket(Sprite trinket)
+    {
+        Debug.Log("Adding trinket...");
+
+        for (int i = 0; i < trinketFields.Length; i++) // cycles throught the trinket fields
+        {
+            if (trinketFields[i].sprite == null) // if a field is empty add the item
+            {
+                trinketFields[i].sprite = trinket;
+                break;
+            }
+        }
+    }
+
+    private void LevelUpItem()
+    {
+        Debug.Log("Duplicate found");
     }
 }

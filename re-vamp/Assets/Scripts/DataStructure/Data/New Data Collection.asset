@@ -12,5 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25b58dc0536ffab459979738c087c749, type: 3}
   m_Name: New Data Collection
   m_EditorClassIdentifier: 
-  weapons: []
-  trinkets: []
+  weapons:
+  - {fileID: 11400000, guid: 0a8414b97c792cf4f902fb4179c39231, type: 2}
+  - {fileID: 11400000, guid: 2cd607dbac3a2854c95fab0bd5b7bc2d, type: 2}
+  - {fileID: 11400000, guid: c33db731c8316864cac31b86e7ddb87e, type: 2}
+  - {fileID: 11400000, guid: 9e4cb25e1ba3f6142887e791747b9972, type: 2}
+  - {fileID: 11400000, guid: 89d03e68cda18da45bb4a5c3235fd341, type: 2}
+  - {fileID: 11400000, guid: 940a76b8df601ea42a0023577541990a, type: 2}
+  trinkets:
+  - {fileID: 11400000, guid: 81c8074ae86527f43befe31894084afc, type: 2}
+  - {fileID: 11400000, guid: 4a6f3cea3fd1a114e860133b7b546ccf, type: 2}
+  - {fileID: 11400000, guid: cf90a4a80fee1d4408679aa4895f0b6a, type: 2}
+  - {fileID: 11400000, guid: 013336f2eb899974487ecca6e04c3a21, type: 2}
+  - {fileID: 11400000, guid: c69c63540a02ef241aa8ef1b9fced105, type: 2}
+  - {fileID: 11400000, guid: d446b0aeba2e7c64eacf0acd441da9de, type: 2}
+  - {fileID: 11400000, guid: 5c815573300c9884e83a8de25edaf18f, type: 2}

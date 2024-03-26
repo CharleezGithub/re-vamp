@@ -29,7 +29,7 @@ public class DataCollection : ScriptableObject
 
     public void AddTrinketData()
     {
-        trinkets.Clear(); // Clear the list to avoid duplicates if Start is called multiple times
+        trinkets.Clear();
         // Find all GUIDs of ScriptableObject files of type TrinketData
         string[] guids = AssetDatabase.FindAssets("t:TrinketData");
 
