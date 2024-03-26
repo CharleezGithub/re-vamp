@@ -60,8 +60,7 @@ public class ZShop : MonoBehaviour
     private void OnBuyTestMethod(ZShopItem obj)
     {
         // Kim. Look at here
-        print("Bought: " + obj.SharedProperties.GetName());
-        print("ItemType: " + obj.SharedProperties.GetItemType());
+        print("Bought: " + obj.SharedProperties.GetName() + "\nItemType: " + obj.SharedProperties.GetItemType());
     }
 
     private void Awake()
