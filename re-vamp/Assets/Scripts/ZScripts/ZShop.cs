@@ -99,6 +99,16 @@ public class ZShop : MonoBehaviour
     {
         showingItemIds.Clear();
 
+        // Clears the button icons
+        for (int i = 0; i < ShopButtons.Length; i++)
+        {
+            // Get sprite and image renderer
+            Image imageRenderer = ShopButtons[i].transform.GetChild(0).GetComponent<Image>();
+
+            // Replace the sprite in the renderer
+            imageRenderer.sprite = null;
+        }
+
         List<ZShopItem> notBoughtItems = items.Where(x => !x.HasBought).ToList();
         for (int i = 0; i < math.min(ShopButtons.Length, notBoughtItems.Count); i++)
         {
@@ -120,20 +130,16 @@ public class ZShop : MonoBehaviour
                 // Store this item as showing
                 showingItemIds.Add(randomItem.id);
             }
-            else
-            {
-                // Get sprite and image renderer
-                Image imageRenderer = ShopButtons[i].transform.GetChild(0).GetComponent<Image>();
-
-                // Replace the sprite in the renderer
-                imageRenderer.sprite = null;
-            }
         }
     }
 
     public void BuyItem(int buttonIndex)
     {
-        if (buttonIndex > showingItemIds.Count) return; // Stops if button clicked is out of range
+        if (buttonIndex > showingItemIds.Count - 1)
+        {
+            SetShopState(ShopState.Inactive);
+            return; // Stops if button clicked is out of range
+        }
 
         // Grab item from array
         int itemIndex = showingItemIds[buttonIndex];
@@ -143,11 +149,10 @@ public class ZShop : MonoBehaviour
         SetShopState(ShopState.Inactive);
 
         OnItemBought?.Invoke(boughtItem);
-        items[showingItemIds[buttonIndex]] = boughtItem; // Re-inject back to array
     }
 }
 
-public struct ZShopItem
+public class ZShopItem
 {
     public int id;
     public string name;
