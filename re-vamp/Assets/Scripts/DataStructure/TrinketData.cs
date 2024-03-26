@@ -28,6 +28,7 @@ public class TrinketData : ScriptableObject, IZShopItem
         {
             string path = AssetDatabase.GetAssetPath(this);
             Debug.LogError("Prefab not assigned! At: "+ path);
+            return null;
         }
         return trinketPrefab.GetComponent<SpriteRenderer>().sprite;
     }

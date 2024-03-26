@@ -20,6 +20,7 @@ public class WeaponData : ScriptableObject, IZShopItem
         {
             string path = AssetDatabase.GetAssetPath(this);
             Debug.LogError("Prefab not assigned! At: " + path);
+            return null;
         }
         return weaponPrefab.GetComponent<SpriteRenderer>().sprite;
     }
