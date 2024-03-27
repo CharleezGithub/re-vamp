@@ -283,7 +283,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6340240415801742025
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2015,13 +2015,6 @@ MonoBehaviour:
   - {fileID: 0}
   trinketFields:
   - {fileID: 0}
-  weaponRef: {fileID: 1559225122894916435}
-  trinketRef: {fileID: 2946356819438270801}
-  fieldSize: {x: 100, y: 100}
-  spriteFieldSize: {x: 80, y: 80}
-  weaponOffset: {x: 150, y: 0}
-  trinketOffset: {x: 0, y: -110}
-  fieldSprite: {fileID: 21300000, guid: 552e5100a5cb78748a19222037261b2d, type: 3}
 --- !u!1 &5624437054475254407
 GameObject:
   m_ObjectHideFlags: 0
