@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
+    public static event Action OnPlayerAutoAttack;
+
     [Space(10)]
     public bool isProjectile;
     [Space(10)]
@@ -46,6 +49,9 @@ public class Attack : MonoBehaviour
                     DamagePopup.CreatePopUp(hitEnemy.transform.position, ((int)attackDamage).ToString());
                 }
             }
+
+            OnPlayerAutoAttack?.Invoke();
+
             yield return new WaitForSeconds(attackInterval);
         }
     }
