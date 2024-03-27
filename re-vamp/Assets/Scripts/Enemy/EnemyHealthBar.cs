@@ -33,6 +33,10 @@ public class EnemyHealthBar : MonoBehaviour
     }
     void HealthBarPosition()
     {
-        healthBar.transform.SetPositionAndRotation(new Vector3(enemy.transform.position.x, enemy.transform.position.y, enemy.transform.position.z) + healthBarOffset, Camera.main.transform.rotation);
+        return;
+        healthBar.transform.SetPositionAndRotation(new Vector3(enemy.transform.position.x,
+                                                               enemy.transform.position.y,
+                                                               enemy.transform.position.z) + healthBarOffset, 
+                                                               Camera.main.transform.rotation);
     }
 }
