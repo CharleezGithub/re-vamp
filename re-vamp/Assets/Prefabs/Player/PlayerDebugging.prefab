@@ -1386,6 +1386,7 @@ GameObject:
   - component: {fileID: 2129602948555044931}
   - component: {fileID: 1649261572915740767}
   - component: {fileID: 4754385985415687213}
+  - component: {fileID: 5276699993617238300}
   m_Layer: 7
   m_Name: PlayerDebugging
   m_TagString: Player
@@ -1502,7 +1503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isProjectile: 0
-  attackRange: 2
+  attackRange: 8
   attackInterval: 1
   projectileAttackInterval: 0.1
   EnemyLayer:
@@ -1689,6 +1690,19 @@ MonoBehaviour:
   - {fileID: 8987621486545297944}
   - {fileID: 8870610866447788557}
   allShopItemsCollection: {fileID: 11400000, guid: 095f13ac298272e42bc95985f804d802, type: 2}
+--- !u!114 &5276699993617238300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3977218777653717955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13dedbc414ac10d4c9143a5de415d361, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EffectPrefab: {fileID: 8065916068742758471, guid: 4b7286ccf2b671644a2abe7270ff2aea, type: 3}
 --- !u!1 &4166458222229957846
 GameObject:
   m_ObjectHideFlags: 0
