@@ -8,6 +8,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -478239436359380590, guid: e434c54eb7cd29f47ad3d3209ed3a278, type: 3}
+      propertyPath: m_Size.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: -478239436359380590, guid: e434c54eb7cd29f47ad3d3209ed3a278, type: 3}
+      propertyPath: m_Size.y
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: -478239436359380590, guid: e434c54eb7cd29f47ad3d3209ed3a278, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 439286c9aa693324bbfe9857dbb0e70d, type: 3}
+    - target: {fileID: -478239436359380590, guid: e434c54eb7cd29f47ad3d3209ed3a278, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4542989857569864318, guid: e434c54eb7cd29f47ad3d3209ed3a278, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -50,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6697450763737038557, guid: e434c54eb7cd29f47ad3d3209ed3a278, type: 3}
       propertyPath: m_Name
-      value: SilverWare
+      value: Spoon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
