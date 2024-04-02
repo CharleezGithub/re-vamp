@@ -37564,6 +37564,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1365662693482644420, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3038319016890711345, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -37611,6 +37615,18 @@ PrefabInstance:
     - target: {fileID: 3977218777653717955, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
       propertyPath: m_Name
       value: PlayerDebugging
+      objectReference: {fileID: 0}
+    - target: {fileID: 5245051818674528979, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
+      propertyPath: cooldownTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5245051818674528979, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
+      propertyPath: projectileSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5245051818674528979, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
+      propertyPath: projectileLifetime
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5553928100394979511, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
       propertyPath: m_AnchorMax.y

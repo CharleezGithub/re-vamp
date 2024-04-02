@@ -22,7 +22,7 @@ public class SpellTome : MonoBehaviour
 
     private void Update()
     {
-        if (!isAttacking)
+        if (!isAttacking && projectilePrefab != null)
             StartCoroutine(SlashAttack());
     }
 

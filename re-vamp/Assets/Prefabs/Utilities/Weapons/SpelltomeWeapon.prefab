@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab47ea99dc9e26244aa39460ee1d5d0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 0}
+  projectilePrefab: {fileID: 6570197109321556933, guid: b38c1e000e3a3234b8ad3fbfc0cccb9c, type: 3}
   projectileSpeed: 0
   projectileLifetime: 0
   cooldownTime: 0
