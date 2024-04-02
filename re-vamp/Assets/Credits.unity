@@ -272,7 +272,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 8
+  m_fontStyle: 32
   m_HorizontalAlignment: 4
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -754,8 +754,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Alexander \r\nZhentao\r\n\nKim Rex\r\nAlexander \r\nZhentao\r\nAbdellah\r\nSebastian
-    Leslie\r\nChi Larsen\r\nAmmar\r\n\nOliver Mikkelsen\r\nNikolaj Spangsberg\r\nYannick
-    \r\nLouis Dammen\r\nDima Chuprina\r\n\nHector\r\nVitus\r\nSylle\r\nOliver P\r\nValentin\r\n\n\nViggo\r\nVillads\r\nEdgar\r\nJulius\r\n\n"
+    Leslie\r\nChi Larsen\r\nAmmar\r\nSebastian Robert\n\nOliver Mikkelsen\r\nNikolaj
+    Spangsberg\r\nYannick \r\nLouis Dammen\r\nDima Chuprina\r\n\nHector\r\nVitus\r\nSylle\r\nOliver
+    P\r\nValentin\r\n\n\nViggo\r\nVillads\r\nEdgar\r\nJulius\r\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -788,7 +789,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 8
+  m_fontStyle: 32
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
