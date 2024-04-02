@@ -49,14 +49,23 @@ public class SlashingAttack : MonoBehaviour
     }
     void FireProjectile()
     {
-        // Instantiate the projectile
-        GameObject projectile = Instantiate(projectilePrefab, playerTransform.position, Quaternion.identity);
-
         // Calculate the direction based on player input
         if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
             direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         else
-            direction = Vector2.zero;
+            direction = new Vector2(Random.Range(-1, 2), Random.Range(-1, 2));
+
+        if (direction == Vector2.zero)
+            direction = Vector2.one;
+
+        // Instantiate the projectile
+        GameObject projectile = Instantiate(projectilePrefab, playerTransform.position, Quaternion.identity);
+
+        // Calculate the angle towards the direction
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        // Rotate the projectile to face the moving direction
+        projectile.transform.rotation = Quaternion.Euler(0f, 0f, angle - 90); // Adjusted by -90 degrees if needed, depending on your sprite's default orientation
 
         // Move the projectile in the direction without rigidbody
         StartCoroutine(MoveProjectile(projectile, direction));
@@ -64,15 +73,18 @@ public class SlashingAttack : MonoBehaviour
         // Destroy the projectile after its lifetime
         Destroy(projectile, projectileLifetime);
     }
+
     IEnumerator MoveProjectile(GameObject projectile, Vector2 direction)
     {
         while (projectile != null)
         {
             float step = projectileSpeed * Time.deltaTime;
-            if (direction == Vector2.zero)
-                direction = new Vector2(Random.Range(-1, 2), Random.Range(-1, 2));
-            projectile.transform.Translate(direction * step);
+
+            // Move the projectile forward in the direction it's facing
+            projectile.transform.Translate(Vector3.up * step, Space.Self); // Use Vector3.right if your sprite faces to the right by default
+
             yield return null;
         }
     }
 }
+
