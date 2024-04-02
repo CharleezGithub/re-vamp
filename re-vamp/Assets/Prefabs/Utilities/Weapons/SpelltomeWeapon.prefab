@@ -71,5 +71,29 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 53042319356948366, guid: 9a2906d6f44e6cc4f90e57c23e9f1d84, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -2262691777437890581}
   m_SourcePrefab: {fileID: 100100000, guid: 9a2906d6f44e6cc4f90e57c23e9f1d84, type: 3}
+--- !u!1 &4224563350556370684 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 53042319356948366, guid: 9a2906d6f44e6cc4f90e57c23e9f1d84, type: 3}
+  m_PrefabInstance: {fileID: 4187459562839640434}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-2262691777437890581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4224563350556370684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab47ea99dc9e26244aa39460ee1d5d0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 0}
+  projectileSpeed: 0
+  projectileLifetime: 0
+  cooldownTime: 0
