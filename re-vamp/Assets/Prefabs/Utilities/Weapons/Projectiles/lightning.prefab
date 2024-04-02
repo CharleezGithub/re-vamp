@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 978250292797973656}
   - component: {fileID: 7308601236653545045}
   - component: {fileID: 8491653227810271295}
-  - component: {fileID: -6747677002457956392}
+  - component: {fileID: -136147064935324829}
   m_Layer: 0
   m_Name: lightning
   m_TagString: DamageEnemy
@@ -4899,7 +4899,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2847552208974591219}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0194c45efb6d5714b89dd46c1ebebb38, type: 3}
   m_Name: 
@@ -4907,13 +4907,13 @@ MonoBehaviour:
   isProjectile: 0
   attackRange: 1
   attackInterval: 1
+  projectileAttackInterval: 0.1
   EnemyLayer:
     serializedVersion: 2
     m_Bits: 8
   attackDamage: 10
-  enemy: {fileID: 0}
-  tempPrefabNeedsToBeReplacedWithTMPCode: {fileID: 0}
---- !u!114 &-6747677002457956392
+  damagePopupPrefab: {fileID: 0}
+--- !u!114 &-136147064935324829
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4922,11 +4922,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2847552208974591219}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 506cc1d24c970f644a715bfeb058c95a, type: 3}
+  m_Script: {fileID: 11500000, guid: 58b0625996099ed49a60a8daf2127a96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LifetimeSecs: 1.8
-  ToDie: {fileID: 2847552208974591219}
+  lifetime: 2
 --- !u!1 &3871357967165206596
 GameObject:
   m_ObjectHideFlags: 0

@@ -37628,6 +37628,14 @@ PrefabInstance:
       propertyPath: projectileLifetime
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5276699993617238300, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
+      propertyPath: EffectPrefab
+      value: 
+      objectReference: {fileID: 2847552208974591219, guid: d4a8d821dadcdf14c99e1dd896712980, type: 3}
+    - target: {fileID: 5276699993617238300, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
+      propertyPath: targetCamera
+      value: 
+      objectReference: {fileID: 238967261}
     - target: {fileID: 5553928100394979511, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
