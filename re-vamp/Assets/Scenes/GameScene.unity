@@ -37640,6 +37640,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6747424787171634710, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
+      propertyPath: SpawnParent
+      value: 
+      objectReference: {fileID: 831471217}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -45337,6 +45341,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &831471217 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6844471932193009117, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
+  m_PrefabInstance: {fileID: 614577316}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &835702041
 GameObject:
   m_ObjectHideFlags: 3

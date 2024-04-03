@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
+    [SerializeField] private Transform SpawnParent;
+
     [Tooltip("The inventory slots holding the weapons")]
     public Image[] weaponFields;
 
@@ -28,6 +30,8 @@ public class Inventory : MonoBehaviour
         {
             AddTrinket(itemBought.SharedProperties.GetSprite());
         }
+
+        Instantiate(itemBought.SharedProperties.GetPrefab(), Vector3.zero, Quaternion.identity, SpawnParent);
     }
 
     private void AddWeapon(Sprite weapon)

@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class hearts_increase : MonoBehaviour
 {
-    public Health health_script;
+    Health health_script;
 
     public float health_multiplier = 1.5f;
 
     void OnEnable()
     {
+        health_script = Player.Instance.GetComponent<Health>();
         health_script.maxHealth *= health_multiplier;
     }
     void OnDisable()
