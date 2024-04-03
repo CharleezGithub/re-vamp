@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class armortrinket : MonoBehaviour
 {
-
-    public GameObject Player;
     public int armorBoostAmount = 20;
     void Start()
     {
@@ -16,7 +14,7 @@ public class armortrinket : MonoBehaviour
     public void BuyArmorTrinket()
     {
        
-        Health playerHealth = Player.GetComponent<Health>();
+        Health playerHealth = Player.Instance.GetComponent<Health>();
 
         if (playerHealth != null)
         {
