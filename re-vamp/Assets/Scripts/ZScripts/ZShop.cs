@@ -58,12 +58,14 @@ public class ZShop : MonoBehaviour
         OnItemBought += OnBuyTestMethod;
     }
 
-    private void OnBuyTestMethod(ZShopItem obj)
+    private void OnBuyTestMethod(ZShopItem boughtItem)
     {
         // Kim. Look at here
-        print("Bought: " + obj.SharedProperties.GetName() 
-            + "\nItemType: " + obj.SharedProperties.GetItemType()
-            + "\nItem bought times: " + obj.level); // Also works with: obj.boughtTimes
+        print("Bought: " + boughtItem.SharedProperties.GetName() 
+            + "\nItemType: " + boughtItem.SharedProperties.GetItemType()
+            + "\nItem bought times: " + boughtItem.level); // Also works with: boughtItem.boughtTimes
+
+        print($"Item count of level 2 or over: {ItemsBought.Where(x=>x.boughtTimes > 2).Count()}");
     }
 
     private void Awake()
