@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,7 +11,6 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
-        LevelUpItem();
         ZShop.OnItemBought += AddItem;
     }
 
@@ -25,12 +22,6 @@ public class Inventory : MonoBehaviour
 
         for (int i = 0; i < itemsBought.Length; i++) // Cycles through the bought items
         {
-            if (i >= 1 && itemsBought[i - 1].id == itemsBought[i].id)
-            {
-                LevelUpItem();
-                break;
-            }
-
             if (itemsBought[i].SharedProperties.GetItemType() == ItemType.Weapon) // if its a weapon send the weapon sprite to AddWeapon();
             {
                 AddWeapon(itemsBought[i].SharedProperties.GetSprite());
@@ -71,10 +62,5 @@ public class Inventory : MonoBehaviour
                 break;
             }
         }
-    }
-
-    private void LevelUpItem()
-    {
-        Debug.Log("Duplicate found");
     }
 }
