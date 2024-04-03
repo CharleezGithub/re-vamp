@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
+        // Example: Player.Instance
+
         if (Instance == null)
         {
             Instance = this;
