@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77c198c2232a035468a0814b43c9825c, type: 3}
   m_Name: Increase Speed
   m_EditorClassIdentifier: 
+  maxBuyTimes: 20
   trinketName: Increase Speed
   description: 
-  level: 0
   maxHealthIncrease: 0
   damageIncrease: 0
   armorIncrease: 0
   itemShopSlotIncrease: 0
-  canLevelUp: 0
   projectileSpeedIncrease: 0
   movementSpeedIncrease: 0
   viewDistanceIncrease: 0
   levelMultiplier: 0
+  FOV: 0
   trinketPrefab: {fileID: 8427938882397602699, guid: c3861576ee5fa27438202e7086faefd1, type: 3}

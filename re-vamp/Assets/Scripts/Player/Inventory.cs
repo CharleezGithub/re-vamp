@@ -19,12 +19,12 @@ public class Inventory : MonoBehaviour
         Debug.Log("Adding item...");
 
 
-        if (itemBought.SharedProperties.GetItemType() == ItemType.Weapon && itemBought.level == 0) // if its a weapon send the weapon sprite to AddWeapon();
+        if (itemBought.SharedProperties.GetItemType() == ItemType.Weapon && itemBought.level == 1) // if its a weapon send the weapon sprite to AddWeapon();
         {
             AddWeapon(itemBought.SharedProperties.GetSprite());
         }
 
-        else if (itemBought.SharedProperties.GetItemType() == ItemType.Trinket && itemBought.level == 0) // if its a trinket send the trinket sprite to AddTrinket();
+        else if (itemBought.SharedProperties.GetItemType() == ItemType.Trinket && itemBought.level == 1) // if its a trinket send the trinket sprite to AddTrinket();
         {
             AddTrinket(itemBought.SharedProperties.GetSprite());
         }

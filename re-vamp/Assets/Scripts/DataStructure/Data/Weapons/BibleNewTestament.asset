@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14311d488efe33d47ac0fbd511f80239, type: 3}
   m_Name: BibleNewTestament
   m_EditorClassIdentifier: 
-  maxBuyTimes: 1
+  maxBuyTimes: 3
   weaponName: New Testament
   description: sdhh
   damage: 5

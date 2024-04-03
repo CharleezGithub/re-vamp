@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14311d488efe33d47ac0fbd511f80239, type: 3}
   m_Name: BibleOldTestament
   m_EditorClassIdentifier: 
+  maxBuyTimes: 3
   weaponName: Old Testament
   description: Huge
   damage: 30
-  level: 1
   levelMultiplier: 0.25
   weaponPrefab: {fileID: 4224563350556370684, guid: 9c9adabb083bbbb469af7a5333b242aa, type: 3}
