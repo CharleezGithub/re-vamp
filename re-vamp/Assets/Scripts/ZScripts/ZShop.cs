@@ -182,6 +182,7 @@ public interface IZShopItem
     public Sprite GetSprite();
     public string GetName();
     public ItemType GetItemType();
+    public GameObject GetPrefab();
 }
 
 public enum ItemType

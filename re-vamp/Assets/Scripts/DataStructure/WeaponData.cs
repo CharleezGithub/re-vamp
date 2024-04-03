@@ -28,5 +28,6 @@ public class WeaponData : ZItemSO, IZShopItem
     public string GetName() => weaponName;
 
     public ItemType GetItemType() => ItemType.Weapon;
+    public GameObject GetPrefab() => weaponPrefab;
 }
 

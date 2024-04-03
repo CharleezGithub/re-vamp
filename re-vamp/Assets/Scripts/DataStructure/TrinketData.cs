@@ -34,4 +34,5 @@ public class TrinketData : ZItemSO, IZShopItem
 
     public string GetName() => trinketName;
     public ItemType GetItemType() => ItemType.Trinket;
+    public GameObject GetPrefab() => trinketPrefab;
 }
