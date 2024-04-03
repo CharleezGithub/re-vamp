@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
@@ -130,9 +131,11 @@ public class ZShop : MonoBehaviour
                 // Get sprite and image renderer
                 Sprite buttonSprite = randomItem.SharedProperties.GetSprite();
                 Image imageRenderer = ShopButtons[i].transform.GetChild(0).GetComponent<Image>();
+                TMP_Text textComp = ShopButtons[i].transform.GetChild(1).GetComponent<TMP_Text>();
 
-                // Replace the sprite in the renderer
+                // Assign shop slot with values
                 imageRenderer.sprite = buttonSprite;
+                textComp.text = randomItem.name;
 
                 // Store this item as showing
                 showingItemIds.Add(randomItem.id);
