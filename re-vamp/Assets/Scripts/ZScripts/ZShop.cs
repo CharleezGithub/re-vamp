@@ -115,11 +115,13 @@ public class ZShop : MonoBehaviour
         }
 
         List<ZShopItem> notBoughtItems = items.Where(x => x.boughtTimes < x.maxBuyTimes).ToList();
-        for (int i = 0; i < math.min(ShopButtons.Length, notBoughtItems.Count); i++)
+        for (int i = 0; i < ShopButtons.Length; i++)
         {
             // Getting close to pyramid of doom. This should not be an if statement
             if (notBoughtItems.Count > 0)
             {
+                ShopButtons[i].SetActive(true);
+
                 // Get random item and remove from list
                 int randomIndex = UnityEngine.Random.Range(0, notBoughtItems.Count);
                 ZShopItem randomItem = notBoughtItems[randomIndex];
@@ -134,6 +136,10 @@ public class ZShop : MonoBehaviour
 
                 // Store this item as showing
                 showingItemIds.Add(randomItem.id);
+            }
+            else
+            {
+                ShopButtons[i].SetActive(false); // Don't show button if bought too many
             }
         }
     }
