@@ -14,25 +14,19 @@ public class Inventory : MonoBehaviour
         ZShop.OnItemBought += AddItem;
     }
 
-    private void AddItem(ZShopItem z)
+    private void AddItem(ZShopItem itemBought)
     {
         Debug.Log("Adding item...");
 
-        ZShopItem[] itemsBought = ZShop.ItemsBought;
 
-        for (int i = 0; i < itemsBought.Length; i++) // Cycles through the bought items
+        if (itemBought.SharedProperties.GetItemType() == ItemType.Weapon && itemBought.level == 0) // if its a weapon send the weapon sprite to AddWeapon();
         {
-            if (itemsBought[i].SharedProperties.GetItemType() == ItemType.Weapon) // if its a weapon send the weapon sprite to AddWeapon();
-            {
-                AddWeapon(itemsBought[i].SharedProperties.GetSprite());
-                break;
-            }
+            AddWeapon(itemBought.SharedProperties.GetSprite());
+        }
 
-            else if (itemsBought[i].SharedProperties.GetItemType() == ItemType.Trinket) // if its a trinket send the trinket sprite to AddTrinket();
-            {
-                AddTrinket(itemsBought[i].SharedProperties.GetSprite());
-                break;
-            }
+        else if (itemBought.SharedProperties.GetItemType() == ItemType.Trinket && itemBought.level == 0) // if its a trinket send the trinket sprite to AddTrinket();
+        {
+            AddTrinket(itemBought.SharedProperties.GetSprite());
         }
     }
 
