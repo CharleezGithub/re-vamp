@@ -58,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5948344895783119534, guid: 9febdde2741a0d843ac327e5a75340e4, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5948344895783119534, guid: 9febdde2741a0d843ac327e5a75340e4, type: 3}
       propertyPath: projectileAttackInterval

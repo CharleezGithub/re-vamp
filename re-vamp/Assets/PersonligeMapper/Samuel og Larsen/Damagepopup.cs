@@ -16,9 +16,13 @@ public class DamagePopup : MonoBehaviour
     }
     public static void CreatePopUp(Vector3 position, string text) // Correct method name
     {
-        var popup = Instantiate(current.prefab, position, Quaternion.identity);
-        var tmp = popup.transform.GetComponent<TextMeshProUGUI>();
+        GameObject popup = Instantiate(current.prefab, position, Quaternion.identity);
+        TextMeshProUGUI tmp = popup.transform.GetComponent<TextMeshProUGUI>();
         tmp.text = text;
+
+        print(text);
+        print(tmp);
+
         Destroy(popup, 1f);
     }
 

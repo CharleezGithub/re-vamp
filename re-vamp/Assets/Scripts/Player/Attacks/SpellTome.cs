@@ -17,7 +17,7 @@ public class SpellTome : MonoBehaviour
     {
         GetComponent<SpriteRenderer>().enabled = false;
 
-        StartCoroutine(GetTopParent());
+        playerTransform = Player.Instance.transform;
     }
 
     private void Update()
@@ -25,21 +25,7 @@ public class SpellTome : MonoBehaviour
         if (!isAttacking && projectilePrefab != null)
             StartCoroutine(SlashAttack());
     }
-
-    private IEnumerator GetTopParent()
-    {
-        Transform currentParent = transform.parent;
-
-        // Keep going up the hierarchy until there's no parent left
-        while (currentParent.parent != null)
-        {
-            currentParent = currentParent.parent;
-        }
-
-        playerTransform = currentParent;
-        yield return null;
-    }
-
+       
     private IEnumerator SlashAttack()
     {
         isAttacking = true;

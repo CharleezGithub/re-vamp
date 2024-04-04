@@ -18,6 +18,8 @@ public class SilverWare : MonoBehaviour
         GetComponent<SpriteRenderer>().enabled = false;
 
         playerTransform = Player.Instance.transform;
+
+        print("SilverWare script working");
     }
 
     private void Update()
