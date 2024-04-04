@@ -312,6 +312,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+  XPOrbAmount: 3
+  XPOrb: {fileID: 8926263209388239634, guid: 5db9df04bf380504495545b7ee98b465, type: 3}
+  PlayOnDeath: {fileID: 8300000, guid: ad06e5433b09e884b912a1cf601a4ed1, type: 3}
 --- !u!95 &7182153989463064102
 Animator:
   serializedVersion: 5

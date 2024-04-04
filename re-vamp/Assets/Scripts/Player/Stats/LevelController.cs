@@ -49,8 +49,7 @@ public class LevelController : MonoBehaviour
     {
         if (shop != null)
         {
-            shop.gameObject.SetActive(true);
-            shop.ShowShop(true);
+            ZShop.Instance.SetShopState(ShopState.Active);
         }
     }
 }

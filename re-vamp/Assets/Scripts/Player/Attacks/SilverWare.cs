@@ -4,34 +4,43 @@ using UnityEngine;
 public class SilverWareLauncher : MonoBehaviour
 {
     public GameObject[] silverWare;
-    public int amountPerBurst = 5; // Amount of silverware to launch per burst
-    public float burstCooldown = 2f; // Cooldown time between bursts in seconds
-    public float projectileSpeed = 10f; // Speed at which the silverware will be launched
-    public float projectileLifetime = 5f;
+    public float projectileSpeed;
+    public float projectileLifetime;
+    public float cooldownTime;
 
-    private Vector2 direction;
+    Vector2 direction;
+    bool isAttacking = false;
 
-    [SerializeField]private GameObject player;
+    Transform playerTransform;
+
+    private void Start()
+    {
+        GetComponent<SpriteRenderer>().enabled = false;
+
+        playerTransform = Player.Instance.transform;
+    }
 
     private void Update()
     {
-        StartCoroutine(Burst());
+        if (!isAttacking)
+            StartCoroutine(SlashAttack());
     }
 
-    IEnumerator Burst()
+    private IEnumerator SlashAttack()
     {
-        yield return new WaitForSeconds(burstCooldown);
-        for (int i = 0; i < amountPerBurst; i++)
-        {
-            FireProjectile(silverWare[i]);
-            yield return new WaitForSeconds(0.1f);
-        }
+        isAttacking = true;
+        yield return new WaitForSeconds(cooldownTime);
+        FireProjectile();
+        isAttacking = false;
     }
+    void FireProjectile()
+    {
+        GameObject projectilePrefab = silverWare[Random.Range(0, 3)];
 
-    void FireProjectile(GameObject projectilePrefab)
-    {   
+        direction = new Vector2(Random.Range(-1, 2), Random.Range(-1, 2));
+
         // Instantiate the projectile
-        GameObject projectile = Instantiate(projectilePrefab, player.transform.position, Quaternion.identity);
+        GameObject projectile = Instantiate(projectilePrefab, playerTransform.position, Quaternion.identity);
 
         // Calculate the angle towards the direction
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -53,59 +62,9 @@ public class SilverWareLauncher : MonoBehaviour
             float step = projectileSpeed * Time.deltaTime;
 
             // Move the projectile forward in the direction it's facing
-            projectile.transform.Translate(Vector3.up * step, Space.Self); // Use Vector3.right if sprite faces to the right by default
+            projectile.transform.Translate(Vector3.up * step, Space.Self); // Use Vector3.right if your sprite faces to the right by default
 
             yield return null;
         }
     }
 }
-
-
-/*
- 
-private bool isCooldown = false; // To control the cooldown period between bursts
-
-    void Update()
-    {
-        if (!isCooldown)
-        {
-            StartCoroutine(LaunchBurst());
-        }
-    }
-
-    private IEnumerator LaunchBurst()
-    {
-        isCooldown = true;
-
-        for (int i = 0; i < amountPerBurst; i++)
-        {
-            LaunchSilverware();
-            yield return new WaitForSeconds(0.1f); // Small delay between each launch in a burst
-        }
-
-        yield return new WaitForSeconds(burstCooldown);
-        isCooldown = false;
-    }
-
-    void LaunchSilverware()
-    {
-        if (silverWare.Length == 0)
-            return;
-
-        // Randomly select a silverware prefab
-        int index = Random.Range(0, silverWare.Length);
-        GameObject selectedSilverware = silverWare[index];
-
-        // Instantiate the silverware
-        GameObject launchedObject = Instantiate(selectedSilverware, transform.position, Quaternion.identity);
-
-        // Correct the orientation to face upwards if necessary
-        launchedObject.transform.up = Vector2.up; // This assumes the prefab's default orientation is upwards
-
-        // Apply velocity
-        Rigidbody2D rb = launchedObject.AddComponent<Rigidbody2D>(); // Adding Rigidbody2D component
-        rb.gravityScale = 0; // Making sure it doesn't fall down due to gravity
-        rb.velocity = transform.up * launchSpeed; // Launching in the 'up' direction relative to the world
-    }
-
- */

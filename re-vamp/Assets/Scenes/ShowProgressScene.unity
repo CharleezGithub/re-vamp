@@ -298,11 +298,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &545159076 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3977218777653717955, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
-  m_PrefabInstance: {fileID: 8180645182630037764}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &590932442
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,12 +447,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4ea09472c3e6ae458de5d422281409c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  silverWare: []
-  amountPerBurst: 5
-  burstCooldown: 2
+  silverWare:
+  - {fileID: 3918235858684547110, guid: 09fb6663d4008344fb92969952eec44c, type: 3}
+  - {fileID: 3918235858684547110, guid: 110a97b0d1d5d5a4e91ce27aa20545a6, type: 3}
+  - {fileID: 3918235858684547110, guid: ad9394be874a25f4a8b290e5f63afb42, type: 3}
   projectileSpeed: 10
   projectileLifetime: 5
-  player: {fileID: 545159076}
+  cooldownTime: 0.5
 --- !u!114 &785564164 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1956562872966687988, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}

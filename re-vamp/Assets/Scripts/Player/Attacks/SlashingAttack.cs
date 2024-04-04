@@ -16,28 +16,13 @@ public class SlashingAttack : MonoBehaviour
     private void Start()
     {
         GetComponent<SpriteRenderer>().enabled = false;
-
-        StartCoroutine(GetTopParent());
+        playerTransform = Player.Instance.transform;
     }
 
     private void Update()
     {
         if (!isAttacking)
             StartCoroutine(SlashAttack());
-    }
-
-    private IEnumerator GetTopParent()
-    {
-        Transform currentParent = transform.parent;
-
-        // Keep going up the hierarchy until there's no parent left
-        while (currentParent.parent != null)
-        {
-            currentParent = currentParent.parent;
-        }
-
-        playerTransform = currentParent;
-        yield return null;
     }
 
     private IEnumerator SlashAttack()
