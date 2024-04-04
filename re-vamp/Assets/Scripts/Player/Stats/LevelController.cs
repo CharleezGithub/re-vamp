@@ -36,20 +36,13 @@ public class LevelController : MonoBehaviour
             {
                 float extraXP = xp - maxXP;
                 level++;
-                ShowShop();// Show shop when leveling up
+                ZShop.Instance.SetShopState(ShopState.Active); // Show shop as leveling up
                 maxXP = (float)Math.Round(maxXP + maxXP * 0.2f);
                 xp = extraXP;
                 yield return null;
             }
             else
                 yield return null;
-        }
-    }
-    void ShowShop()
-    {
-        if (shop != null)
-        {
-            ZShop.Instance.SetShopState(ShopState.Active);
         }
     }
 }

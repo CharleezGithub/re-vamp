@@ -1670,7 +1670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isProjectile: 0
-  attackRange: 1.1
+  attackRange: 2
   attackInterval: 1
   projectileAttackInterval: 0.1
   EnemyLayer:

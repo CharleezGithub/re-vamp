@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class SilverWareLauncher : MonoBehaviour
+public class SilverWare : MonoBehaviour
 {
     public GameObject[] silverWare;
     public float projectileSpeed;
