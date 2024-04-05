@@ -1,5 +1,6 @@
 using UnityEditor;
 using UnityEngine;
+#if UNITY_EDITOR
 
 [CustomEditor(typeof(DataCollection))]
 class SaveDataCollection : Editor
@@ -18,3 +19,5 @@ class SaveDataCollection : Editor
         }
     }
 }
+
+#endif

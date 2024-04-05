@@ -9,6 +9,7 @@ public class DataCollection : ScriptableObject
     public List<WeaponData> weapons = new List<WeaponData>();
     public List<TrinketData> trinkets = new List<TrinketData>();
 
+    #if UNITY_EDITOR
     public void AddWeaponData()
     {
         weapons.Clear();
@@ -45,4 +46,5 @@ public class DataCollection : ScriptableObject
             trinkets.Add(trinketData);
         }
     }
+    #endif
 }
