@@ -100,7 +100,7 @@ MonoBehaviour:
   SpawnBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 15, y: 10, z: 0}
-  prefabToSpawn: {fileID: 3390592955288566696, guid: df76420c525528747b2425e2a7ce72bb, type: 3}
+  prefabToSpawn: {fileID: 2847552208974591219, guid: d4a8d821dadcdf14c99e1dd896712980, type: 3}
   minScale: 1
   maxScale: 3
   minimumDistance: 3
