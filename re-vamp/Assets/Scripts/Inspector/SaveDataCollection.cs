@@ -8,7 +8,7 @@ class SaveDataCollection : Editor
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
-        if (GUILayout.Button("Test")) 
+        if (GUILayout.Button("Load Items")) 
         {
             data.AddWeaponData();
 
