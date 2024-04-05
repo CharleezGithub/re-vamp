@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class Health : MonoBehaviour
 {
@@ -8,10 +9,13 @@ public class Health : MonoBehaviour
     public int currentHealth;
     public TextMeshProUGUI healthText;
     public int armour;
+    public float regenerationsCooldown = 2f;
 
     void Start()
     {
         currentHealth = (int)maxHealth;
+
+        StartCoroutine(HealthOverTime());
     }
 
     public void Update()
@@ -43,5 +47,17 @@ public class Health : MonoBehaviour
     public void ArmorBoost(int armorBoostAmount)
     {
         armour += armorBoostAmount;
+    }
+
+    IEnumerator HealthOverTime()
+    {
+        while (currentHealth > 0)
+        {
+            yield return new WaitForSeconds(regenerationsCooldown);
+            if (currentHealth != maxHealth)
+            {
+                currentHealth++;
+            }
+        }
     }
 }

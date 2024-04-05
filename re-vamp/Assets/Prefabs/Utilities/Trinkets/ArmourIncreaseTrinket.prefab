@@ -97,5 +97,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2534425b3f098348b0ffc36d19eae46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 3977218777653717955, guid: 2affb2869b68eb246a1935ed187742d6, type: 3}
   armorBoostAmount: 20

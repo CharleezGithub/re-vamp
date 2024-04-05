@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Position : MonoBehaviour
 {
-    public Transform player;
+    Transform player;
     public Transform Orbit;
     public Transform Child;
    
@@ -12,6 +12,8 @@ public class Position : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = Player.Instance.transform;
+
         Child.position = new Vector3(Orbit.position.x + x, Orbit.position.y, Orbit.position.z);
     }
 

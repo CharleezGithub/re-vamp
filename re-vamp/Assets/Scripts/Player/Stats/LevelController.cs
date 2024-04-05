@@ -9,7 +9,7 @@ public class LevelController : MonoBehaviour
     public float xp;
     public float maxXP;
     public int level;
-    [SerializeField] private Shop shop;
+    [SerializeField] private Health health;
     private void Start()
     {
         if (level == 0)

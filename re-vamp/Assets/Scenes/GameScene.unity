@@ -7577,7 +7577,7 @@ GameObject:
   - component: {fileID: 238967260}
   m_Layer: 0
   m_Name: CinemachineBrain
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37712,6 +37712,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2937292952063099603, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
+      propertyPath: regenerationsCooldown
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3038319016890711345, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -37768,13 +37772,24 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6541668134400005208, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
+      propertyPath: dashDuration
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6541668134400005208, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
+      propertyPath: dashMultiplier
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8892020781846171902, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 611793338}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3977218777653717955, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 714504334}
   m_SourcePrefab: {fileID: 100100000, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
 --- !u!1 &635078736
 GameObject:
@@ -37959,7 +37974,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 930a824e53edff64eaec0e5c57115343, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5e42c33f8bb9ab7479acb70dc867cc10, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

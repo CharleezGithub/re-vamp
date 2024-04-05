@@ -1,39 +1,44 @@
-using System.Collections;
-using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 
 public class Monocle : MonoBehaviour
 {
-    public float fov_multiplier = 1.4f;
+    public float fovMultiplier = 1.4f;
 
+    private CinemachineVirtualCamera virtualCamera;
+    private CinemachineBrain cinemachineBrain;
 
-
-    void OnEnable()
+    private void Awake()
     {
-        Camera mainCamera = Camera.main;
-        // Check if a main camera is found to avoid null reference exceptions
-        if (mainCamera != null)
+        // Find the virtual camera and cinemachine brain in the scene
+        virtualCamera = GameObject.FindWithTag("VirtualCamera").GetComponent<CinemachineVirtualCamera>();
+        cinemachineBrain = Camera.main.GetComponent<CinemachineBrain>();
+    }
+
+    private void OnEnable()
+    {
+        if (virtualCamera != null && cinemachineBrain != null)
         {
-            mainCamera.fieldOfView *= fov_multiplier;
+            // Directly modify the virtual camera's FOV when enabling
+            virtualCamera.m_Lens.FieldOfView *= fovMultiplier;
         }
         else
         {
-            Debug.LogWarning("Main Camera not found. Make sure your camera is tagged as 'MainCamera'.");
+            Debug.LogWarning("Camera or CinemachineBrain not found. Make sure your camera is tagged as 'VirtualCamera'.");
         }
-
     }
-    void OnDisable()
+
+    private void OnDisable()
     {
-        Camera mainCamera = Camera.main;
-        // Check if a main camera is found to avoid null reference exceptions
-        if (mainCamera != null)
+        if (virtualCamera != null && cinemachineBrain != null)
         {
-            mainCamera.fieldOfView /= fov_multiplier;
+            // Reset the FOV to its original value when disabling
+            virtualCamera.m_Lens.FieldOfView /= fovMultiplier;
         }
         else
         {
-            Debug.LogWarning("Main Camera not found. Make sure your camera is tagged as 'MainCamera'.");
+            Debug.LogWarning("Camera or CinemachineBrain not found. Make sure your camera is tagged as 'VirtualCamera'.");
         }
-
     }
+
 }

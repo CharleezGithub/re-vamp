@@ -60,7 +60,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81e3093f7bdcd624098a5605d57b3d9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   Orbit: {fileID: 214610969510981060}
   Child: {fileID: 130228099316394705}
   x: 2
@@ -161,10 +160,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0194c45efb6d5714b89dd46c1ebebb38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isProjectile: 0
   attackRange: 0.75
+  attackInterval: 0
+  projectileAttackInterval: 0.5
   EnemyLayer:
     serializedVersion: 2
     m_Bits: 8
-  attackDamage: 10
-  attackInterval: 0
-  enemy: {fileID: 0}
+  attackDamage: 1
+  damagePopupPrefab: {fileID: 0}
