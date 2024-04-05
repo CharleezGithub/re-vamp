@@ -77,6 +77,12 @@ public class ZShop : MonoBehaviour
         {
             SetShopState(ShopState.Toggle);
         }
+
+        // Fuck it. Exit game from game scene through zshop
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
     public void SetShopState(ShopState state)
