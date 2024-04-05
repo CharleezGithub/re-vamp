@@ -10,8 +10,11 @@ public class Explotion : MonoBehaviour
     public float minimumDistance = 3.0f; // Minimum distance from the player
     public float timeBetweenExplotions = 5.0f; // Minimum distance from the player
 
+    public float yOffset = 30.0f;
+
     void Start()
     {
+        gameCamera = Camera.main;
         StartCoroutine(SpawnPrefabAtCameraLookRoutine());
     }
 
@@ -30,13 +33,13 @@ public class Explotion : MonoBehaviour
         {
             Vector2 spawnPosition;
             float distance;
-            do
-            {
-                spawnPosition = gameCamera.ScreenToWorldPoint(new Vector3(Random.Range(0, Screen.width), Random.Range(0, Screen.height), gameCamera.nearClipPlane));
-                distance = Vector2.Distance(spawnPosition, this.transform.position);
-            } while (distance < minimumDistance); // Keep looking for a spawn position until it's far enough from the player
+            //do
+            //{
+            spawnPosition = gameCamera.ScreenToWorldPoint(new Vector3(Random.Range(0, Screen.width), Random.Range(0, Screen.height) + yOffset, gameCamera.nearClipPlane));
+            distance = Vector2.Distance(spawnPosition, this.transform.position);
+            //} while (distance < minimumDistance); // Keep looking for a spawn position until it's far enough from the player
 
-            Debug.Log(distance);
+            Debug.Log(spawnPosition);
             GameObject spawnedPrefab = Instantiate(prefabToSpawn, spawnPosition, Quaternion.identity);
 
             spawnedPrefab.transform.eulerAngles = new Vector3(

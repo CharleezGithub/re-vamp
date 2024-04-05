@@ -37716,6 +37716,18 @@ PrefabInstance:
       propertyPath: regenerationsCooldown
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2984771385248782232, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
+      propertyPath: yOffset
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2984771385248782232, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
+      propertyPath: prefabToSpawn
+      value: 
+      objectReference: {fileID: 2847552208974591219, guid: d4a8d821dadcdf14c99e1dd896712980, type: 3}
+    - target: {fileID: 2984771385248782232, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
+      propertyPath: timeBetweenExplotions
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3038319016890711345, guid: b6f9ba370b6feec478cea2b044494c9c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

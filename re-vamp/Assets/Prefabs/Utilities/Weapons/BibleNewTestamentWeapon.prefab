@@ -97,9 +97,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e07ff57551c20784b97f489b1b157e62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabToSpawn: {fileID: 2847552208974591219, guid: 7054b6aa9882b5c4c907bdf42d9f4e0b, type: 3}
+  prefabToSpawn: {fileID: 2847552208974591219, guid: d4a8d821dadcdf14c99e1dd896712980, type: 3}
   gameCamera: {fileID: 0}
   minScale: 0.1
   maxScale: 0.5
   minimumDistance: 3
   timeBetweenExplotions: 5
+  yOffset: 3
