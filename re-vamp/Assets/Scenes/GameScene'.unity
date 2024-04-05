@@ -278,6 +278,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3207255224186335645, guid: 2affb2869b68eb246a1935ed187742d6, type: 3}
+      propertyPath: gameCamera
+      value: 
+      objectReference: {fileID: 1518587261}
     - target: {fileID: 3924220432788170397, guid: 2affb2869b68eb246a1935ed187742d6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -337,7 +341,7 @@ PrefabInstance:
     - target: {fileID: 8021553260626320203, guid: 2affb2869b68eb246a1935ed187742d6, type: 3}
       propertyPath: weapon
       value: 
-      objectReference: {fileID: 1700379679}
+      objectReference: {fileID: 0}
     - target: {fileID: 8021553260626320203, guid: 2affb2869b68eb246a1935ed187742d6, type: 3}
       propertyPath: trinket
       value: 
@@ -515,17 +519,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 2089355402}
   smoothTime: 0.3
---- !u!114 &1700379679 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5695987522607441928, guid: 9a2906d6f44e6cc4f90e57c23e9f1d84, type: 3}
-  m_PrefabInstance: {fileID: 2122209019}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecbf982688be7b74d9d06f28ca5ed58b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1811181000
 PrefabInstance:
   m_ObjectHideFlags: 0
