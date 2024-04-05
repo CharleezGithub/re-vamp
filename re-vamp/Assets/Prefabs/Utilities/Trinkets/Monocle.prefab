@@ -97,4 +97,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51492280350517a438f41f571267b304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fovMultiplier: 22.05
+  fovMultiplier: 1.2
