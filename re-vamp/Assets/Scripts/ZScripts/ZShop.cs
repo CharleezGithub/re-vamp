@@ -1,13 +1,9 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
-using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.Assertions.Must;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
 
 public class ZShop : MonoBehaviour
 {
