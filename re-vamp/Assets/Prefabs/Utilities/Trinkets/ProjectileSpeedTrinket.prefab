@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ProjectileSpeedTrinket
       objectReference: {fileID: 0}
+    - target: {fileID: 2841239883854818432, guid: 26fac5ffc70738c4db98b1ff9a5f2245, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6803346413424314539, guid: 26fac5ffc70738c4db98b1ff9a5f2245, type: 3}
       propertyPath: m_Size.x
       value: 10
